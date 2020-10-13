@@ -11,7 +11,7 @@ import SwiftUI
 struct P_G_Code_ChallengeApp: App {
     var body: some Scene {
         WindowGroup {
-            TopStoriesViewController()
+            TopStoriesContentView()
         }
     }
 }

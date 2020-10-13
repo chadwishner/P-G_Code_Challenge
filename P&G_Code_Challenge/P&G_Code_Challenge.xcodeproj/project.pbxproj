@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		6729B9E8253506D300565312 /* P_G_Code_ChallengeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6729B9E7253506D300565312 /* P_G_Code_ChallengeApp.swift */; };
-		6729B9EA253506D300565312 /* TopStoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6729B9E9253506D300565312 /* TopStoriesViewController.swift */; };
+		6729B9EA253506D300565312 /* TopStoriesContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6729B9E9253506D300565312 /* TopStoriesContentView.swift */; };
 		6729B9EC253506D700565312 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6729B9EB253506D700565312 /* Assets.xcassets */; };
 		6729B9EF253506D700565312 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6729B9EE253506D700565312 /* Preview Assets.xcassets */; };
 		6729B9FA253506D700565312 /* P_G_Code_ChallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6729B9F9253506D700565312 /* P_G_Code_ChallengeTests.swift */; };
@@ -38,7 +38,7 @@
 /* Begin PBXFileReference section */
 		6729B9E4253506D300565312 /* P&G_Code_Challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "P&G_Code_Challenge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6729B9E7253506D300565312 /* P_G_Code_ChallengeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = P_G_Code_ChallengeApp.swift; sourceTree = "<group>"; };
-		6729B9E9253506D300565312 /* TopStoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopStoriesViewController.swift; sourceTree = "<group>"; };
+		6729B9E9253506D300565312 /* TopStoriesContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopStoriesContentView.swift; sourceTree = "<group>"; };
 		6729B9EB253506D700565312 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6729B9EE253506D700565312 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		6729B9F0253506D700565312 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -102,7 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				6729B9E7253506D300565312 /* P_G_Code_ChallengeApp.swift */,
-				6729B9E9253506D300565312 /* TopStoriesViewController.swift */,
+				6729B9E9253506D300565312 /* TopStoriesContentView.swift */,
 				6729BA1825350A0B00565312 /* HackerStory.swift */,
 				6729BA1D25350A9E00565312 /* Item.swift */,
 				6729BA222535131F00565312 /* GetData.swift */,
@@ -269,7 +269,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6729BA1925350A0B00565312 /* HackerStory.swift in Sources */,
-				6729B9EA253506D300565312 /* TopStoriesViewController.swift in Sources */,
+				6729B9EA253506D300565312 /* TopStoriesContentView.swift in Sources */,
 				6729BA232535131F00565312 /* GetData.swift in Sources */,
 				6729B9E8253506D300565312 /* P_G_Code_ChallengeApp.swift in Sources */,
 				6729BA1E25350A9E00565312 /* Item.swift in Sources */,

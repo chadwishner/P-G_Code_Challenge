@@ -8,7 +8,7 @@ import Foundation
 
 var topStories = [Int]()
 
-func getTopStories() -> [Int] {
+func getTopStories(){
 	let url = NSURL(string: "https://hacker-news.firebaseio.com/v0/topstories.json?print=pretty")
 	URLSession.shared.dataTask(with: url! as URL) { (data, response, error) in
 		if error != nil {

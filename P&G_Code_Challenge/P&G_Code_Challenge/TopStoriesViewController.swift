@@ -7,15 +7,15 @@
 
 import SwiftUI
 
-struct TopStoriesViewController: View {
+struct TopStoriesContentView: View {
     var body: some View {
-        Text("Top Stories")
+		Text("Top Stories")
             .padding()
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        TopStoriesViewController()
+        TopStoriesContentView()
     }
 }

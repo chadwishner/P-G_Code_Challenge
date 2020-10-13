@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct HackerStory: View {
-	var story: Story
 	
 	//todo, should have image with title next to it
 	
