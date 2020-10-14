@@ -14,8 +14,9 @@
 		6729B9FA253506D700565312 /* P_G_Code_ChallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6729B9F9253506D700565312 /* P_G_Code_ChallengeTests.swift */; };
 		6729BA05253506D700565312 /* P_G_Code_ChallengeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6729BA04253506D700565312 /* P_G_Code_ChallengeUITests.swift */; };
 		6729BA1925350A0B00565312 /* HackerStory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6729BA1825350A0B00565312 /* HackerStory.swift */; };
-		6729BA1E25350A9E00565312 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6729BA1D25350A9E00565312 /* Item.swift */; };
+		6729BA1E25350A9E00565312 /* Story.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6729BA1D25350A9E00565312 /* Story.swift */; };
 		6729BA232535131F00565312 /* GetData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6729BA222535131F00565312 /* GetData.swift */; };
+		678D3C702536612A0006D495 /* StoryRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 678D3C6F2536612A0006D495 /* StoryRow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,8 +50,9 @@
 		6729BA04253506D700565312 /* P_G_Code_ChallengeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = P_G_Code_ChallengeUITests.swift; sourceTree = "<group>"; };
 		6729BA06253506D700565312 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6729BA1825350A0B00565312 /* HackerStory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HackerStory.swift; sourceTree = "<group>"; };
-		6729BA1D25350A9E00565312 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		6729BA1D25350A9E00565312 /* Story.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Story.swift; sourceTree = "<group>"; };
 		6729BA222535131F00565312 /* GetData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetData.swift; sourceTree = "<group>"; };
+		678D3C6F2536612A0006D495 /* StoryRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryRow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,11 +103,10 @@
 		6729B9E6253506D300565312 /* P&G_Code_Challenge */ = {
 			isa = PBXGroup;
 			children = (
+				678D3C6E253660DD0006D495 /* Views */,
+				678D3C6D25365DEF0006D495 /* Network */,
+				678D3C6C25365A2C0006D495 /* Models */,
 				6729B9E7253506D300565312 /* P_G_Code_ChallengeApp.swift */,
-				6729B9E9253506D300565312 /* TopStoriesContentView.swift */,
-				6729BA1825350A0B00565312 /* HackerStory.swift */,
-				6729BA1D25350A9E00565312 /* Item.swift */,
-				6729BA222535131F00565312 /* GetData.swift */,
 				6729B9EB253506D700565312 /* Assets.xcassets */,
 				6729B9F0253506D700565312 /* Info.plist */,
 				6729B9ED253506D700565312 /* Preview Content */,
@@ -137,6 +138,32 @@
 				6729BA06253506D700565312 /* Info.plist */,
 			);
 			path = "P&G_Code_ChallengeUITests";
+			sourceTree = "<group>";
+		};
+		678D3C6C25365A2C0006D495 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				6729BA1D25350A9E00565312 /* Story.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		678D3C6D25365DEF0006D495 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				6729BA222535131F00565312 /* GetData.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		678D3C6E253660DD0006D495 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				6729B9E9253506D300565312 /* TopStoriesContentView.swift */,
+				678D3C6F2536612A0006D495 /* StoryRow.swift */,
+				6729BA1825350A0B00565312 /* HackerStory.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -272,7 +299,8 @@
 				6729B9EA253506D300565312 /* TopStoriesContentView.swift in Sources */,
 				6729BA232535131F00565312 /* GetData.swift in Sources */,
 				6729B9E8253506D300565312 /* P_G_Code_ChallengeApp.swift in Sources */,
-				6729BA1E25350A9E00565312 /* Item.swift in Sources */,
+				678D3C702536612A0006D495 /* StoryRow.swift in Sources */,
+				6729BA1E25350A9E00565312 /* Story.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

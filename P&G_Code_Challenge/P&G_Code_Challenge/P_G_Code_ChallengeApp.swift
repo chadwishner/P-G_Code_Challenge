@@ -1,4 +1,3 @@
-//
 //  P_G_Code_ChallengeApp.swift
 //  P&G_Code_Challenge
 //
