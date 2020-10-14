@@ -7,8 +7,8 @@ import SwiftUI
 
 struct HackerStory: View {
 	@ObservedObject  var getData = GetData()
+	@Namespace private var matchedGeo
 	
-	//todo, should have image with title next to it
 	var story: Story
 	var body: some View {
 		VStack(alignment: .center) {
@@ -31,6 +31,7 @@ struct HackerStory: View {
 							.padding(.top, 0.5)
 					}.padding(.bottom, 10)
 				}
+			Spacer()
 			}
 			Text(story.text!)
 				.font(.system(size: 16, design: .default))
@@ -39,7 +40,7 @@ struct HackerStory: View {
 	//must figure out how to make this a list of comments
 			List(getData.stories){ story in //prob needs to be getData.comments, but need to figure out how to get it specific to indiv posts
 				StoryRow(story: story)
-				CommentView(comment: comment)
+				//CommentView(comment: comment)
 			}
 			.onAppear{
 				UITableView.appearance().separatorStyle = .none
@@ -51,6 +52,7 @@ struct HackerStory: View {
 		.cornerRadius(20)
 		.shadow(color: Color.black.opacity(0.2), radius: 20, x: 0, y: 0)
 		.padding(.all, 10)
+		//.matchedGeometryEffect(id: "storyOpen", in: matchedGeo)
     }
 }
 

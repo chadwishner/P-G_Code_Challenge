@@ -7,6 +7,7 @@ import SwiftUI
 
 struct TopStoriesContentView: View {
     @ObservedObject  var getData = GetData()
+	@Namespace private var matchedGeo
 	
 	let timer = Timer.publish(every: 1.6, on: .main, in: .common).autoconnect()
 	@State var leftOffset: CGFloat = -100
@@ -39,15 +40,18 @@ struct TopStoriesContentView: View {
 						swap(&self.leftOffset, &self.rightOffset)
 					}
 				} else {
-					List(getData.stories){ story in
-						NavigationLink(destination: HackerStory(story: story)){
-							StoryRow(story: story)
-						}.buttonStyle(PlainButtonStyle())
+					ScrollView{
+						VStack{
+							ForEach(getData.stories){ story in
+								NavigationLink(destination: HackerStory(story: story)
+												.matchedGeometryEffect(id: "storyOpen", in: matchedGeo))
+								{
+									StoryRow(story: story)
+									
+								}//.matchedGeometryEffect(id: "storyOpen", in: matchedGeo)
+							}
+						}
 					}
-					.onAppear{
-						UITableView.appearance().separatorStyle = .none
-					}
-					.listRowBackground(Color.clear)
 				}
 			}
 			.navigationBarTitle(Text("Hacker News"))
