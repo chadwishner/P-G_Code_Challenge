@@ -2,7 +2,6 @@
 //  P&G_Code_Challenge
 //
 //  Created by Chad Wishner on 10/12/20.
-//
 
 import SwiftUI
 
@@ -49,37 +48,6 @@ struct TopStoriesContentView: View {
 			}
 			.navigationBarTitle(Text("Test"))
 		}
-		
-		//		VStack{
-//
-//			HStack(alignment: .center, spacing: 20, content: {
-//
-//				Image("hackernewslogo").resizable().frame(width: 30, height: 30, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/).padding([.top, .leading, .bottom], 10.0)
-//				TextField("Search"/*@END_MENU_TOKEN@*/, text: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Value@*/.constant(""))
-//
-//			}).background(Color.orange)
-//
-//			List{
-////				VStack(alignment: .leading){
-////					HStack(alignment: .bottom){
-////						Text("[Title]").font(.system(size: 20))
-////						Text("[type]").font(.system(size: 10)).padding(.bottom, 3.0)
-////					}
-////					HStack{
-////						Text("[###]")
-////						Text("points by")
-////						Text("[author]")
-////						Text("@")
-////						Text("[time]")
-////
-////
-////					}.font(.system(size: 10))
-////				}
-//
-//			}
-//			Spacer()
-//		}
-		
     }
 }
 
