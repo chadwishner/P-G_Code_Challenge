@@ -42,11 +42,16 @@ struct TopStoriesContentView: View {
 					List(getData.stories){ story in
 						NavigationLink(destination: HackerStory(story: story)){
 							StoryRow(story: story)
-						}
+						}.buttonStyle(PlainButtonStyle())
 					}
+					.onAppear{
+						UITableView.appearance().separatorStyle = .none
+					}
+					.listRowBackground(Color.clear)
 				}
 			}
 			.navigationBarTitle(Text("Hacker News"))
+			
 		}
     }
 }
