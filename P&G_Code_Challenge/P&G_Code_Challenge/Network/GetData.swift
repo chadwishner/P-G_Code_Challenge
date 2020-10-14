@@ -11,6 +11,7 @@ class GetData: ObservableObject {
 	
 	init(){
 		loading = true
+		stories.append(Story(id: 1, type: "job", by: "Chad", time: 1175714200, text: "Test text", url: "www.apple.com", score: 1, title: "Test Title", descendants: 2))
 	}
 	
 	func getTopStories(completion:@escaping ([Int]) -> Void){

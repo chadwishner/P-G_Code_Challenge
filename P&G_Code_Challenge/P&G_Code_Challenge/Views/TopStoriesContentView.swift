@@ -46,7 +46,7 @@ struct TopStoriesContentView: View {
 					}
 				}
 			}
-			.navigationBarTitle(Text("Test"))
+			.navigationBarTitle(Text("Hacker News"))
 		}
     }
 }
