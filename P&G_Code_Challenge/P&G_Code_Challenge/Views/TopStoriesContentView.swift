@@ -7,17 +7,26 @@
 
 import SwiftUI
 
+/** Main view struct to handle home page to show card list of articles
+*/
 struct TopStoriesContentView: View {
-    @ObservedObject  var getData = GetData()
+    // Allow view to update on new data
+	@ObservedObject  var getData = GetStoryData()
+	
+	// Namespace required for opening animation
 	@Namespace private var matchedGeo
 	
+	// For loading animation
 	let timer = Timer.publish(every: 1.6, on: .main, in: .common).autoconnect()
 	@State var leftOffset: CGFloat = -100
 	@State var rightOffset: CGFloat = 100
 	
 	var body: some View {
+		// Use a NavigationView for path hierarchy
 		NavigationView{
+			// VStack used for layering loading animation
 			VStack{
+				// Loading animation
 				if false {
 					ZStack {
 						Circle()
@@ -42,30 +51,28 @@ struct TopStoriesContentView: View {
 						swap(&self.leftOffset, &self.rightOffset)
 					}
 				} else {
+					// ScrollView and LazyVStack used in order to avoid visual attributes of a List
 					ScrollView{
 						LazyVStack{
-//might need to fix this because it changed to a dictionary
 							ForEach(getData.stories, id: \.self){ story in
+								// if let used to make sure that the story exists in the stories array
 								if let s = story {
-									NavigationLink(destination: HackerStory(story: s)
-													.matchedGeometryEffect(id: "storyOpen", in: matchedGeo))
-									{
-										StoryRow(story: s)
-										
+									NavigationLink(destination: StoryView(story: s).matchedGeometryEffect(id: "storyOpen", in: matchedGeo)){
+										StoryRowView(story: s)
 									}//.matchedGeometryEffect(id: "storyOpen", in: matchedGeo)
 								}
-								
 							}
 						}
 					}
 				}
 			}
 			.navigationBarTitle(Text("Hacker News"))
-			
 		}
     }
 }
 
+/** Used for testing view in preview
+*/
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
 		Group {

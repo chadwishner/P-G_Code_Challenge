@@ -5,8 +5,11 @@
 
 import Foundation
 
+/** Struct to format a story as recieved by HackerNews API
+*/
 struct Story: Decodable, Identifiable, Hashable {
-	var id: String
+	// Commented out bools as they are not allowed to be optional, and unnessary when app only displays top 500 active stories
+	var id: Int
 	//var deleted: Bool?
 	var type: String
 	var by: String
@@ -15,36 +18,11 @@ struct Story: Decodable, Identifiable, Hashable {
 	//var dead: Bool?
 	var parent: String?
 	var poll: String?
-	var kids: [String]?
+	var kids: [Int]?
 	var url: String?
-	var score: String?
+	var score: Int?
 	var title: String?
 	//var parts: [Int]?
-	var descendants: String?
+	var descendants: Int?
 	
-	var comments = [Comment]()
-	
-//	mutating func getCommentsHTTP(completion:@escaping ([Comment]) -> Void){
-//		let url = NSURL(string: "https://hacker-news.firebaseio.com/v0/item/" + self.id + ".json?print=pretty")
-//		
-//		URLSession.shared.dataTask(with: url! as URL) { (data, response, error) in
-//			if error != nil {
-//				print(error as Any)
-//				return
-//			}
-//			
-//			guard let data = data else {return}
-//			
-//			do {
-//				let comment = try JSONDecoder().decode(Comment.self, from: data)
-//
-//				self.comments.append(comment)
-//				
-//				completion(story)
-//			} catch let jsonError {
-//				print(jsonError)
-//			}
-//			
-//		}.resume()
-//	}
 }

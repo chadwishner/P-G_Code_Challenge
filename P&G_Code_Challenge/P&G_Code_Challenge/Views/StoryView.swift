@@ -20,7 +20,7 @@ import SwiftUI
 struct StoryView: View {
 	
 	// Allow view to update on new data (for comments)
-	@ObservedObject  var getData = GetData()
+	@ObservedObject  var getData = GetStoryData()
 	@ObservedObject var getCommentData = GetCommentData()
 	
 	// Namespace required for opening animation
@@ -35,7 +35,7 @@ struct StoryView: View {
 			HStack(alignment: .top) {
 				
 				// Image places in navigation link to allow users to click on image to open webView when available
-				NavigationLink(destination: (story.url != nil) ? Webview(url: story.url!) : nil){ //can i put nil here?????
+				NavigationLink(destination: (story.url != nil) ? WebView(url: story.url!) : nil){ //can i put nil here?????
 					
 					// Dynamic Image to display based on type. If there is a url, then a safari icon is displayed
 					Image((story.url != nil) ? "link" : story.type)
@@ -48,7 +48,7 @@ struct StoryView: View {
 					Text(story.title!)
 						.font(.system(size: 15, weight: .bold, design: .default))
 						.foregroundColor(.white)
-						.padding(.top, 10)
+						.padding([.top, .trailing], 10)
 						.fixedSize(horizontal: false, vertical: true)
 					HStack {
 						Text(String(story.score!) + " points by " + story.by)
