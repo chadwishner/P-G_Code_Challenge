@@ -33,10 +33,10 @@ This represents stories to view their whole content. Cards are designed to show 
 
 This file contains all functions to get the 500 top stories from Hacker News as well as the details for those stories. The functions serve to build an array of Stories. Currently the main issue is that stories are not added to the array in the same order that they are sent out. These means that some stories will appear lower/higher on the ContentView. **GetStoryData()** is instantiated when StoryRowView starts and upon initialization starts retrieving the data.
 
-**getTopStories() -> [Int : Int]**
+**getTopStories() -> [Int : Int]**\s\s
 Current implementation uses a URLSession to call */topstories.json* and builds an array of the top stories. This function calls **getStoryDetails()** for each *Int* ID in the array. A dictionary is returned that assigns the Story ID *Int* to an Index *Int*
 
-**getStoryDetails(id: String) -> Story**
+**getStoryDetails(id: String) -> Story**\s\s
 Current implementation uses a URLSession to call */item/[ID].json* and uses a JSONDecoder to decode the response into the **Story** struct. A *Story* is returned.
 
 ### Network/GetCommentData.swift
