@@ -3,6 +3,8 @@
 //
 //  Created by Chad Wishner on 10/12/20.
 
+//TODO FIX ANIMATION
+
 import SwiftUI
 
 struct TopStoriesContentView: View {
@@ -41,14 +43,18 @@ struct TopStoriesContentView: View {
 					}
 				} else {
 					ScrollView{
-						VStack{
-							ForEach(getData.stories){ story in
-								NavigationLink(destination: HackerStory(story: story)
-												.matchedGeometryEffect(id: "storyOpen", in: matchedGeo))
-								{
-									StoryRow(story: story)
-									
-								}//.matchedGeometryEffect(id: "storyOpen", in: matchedGeo)
+						LazyVStack{
+//might need to fix this because it changed to a dictionary
+							ForEach(getData.stories, id: \.self){ story in
+								if let s = story {
+									NavigationLink(destination: HackerStory(story: s)
+													.matchedGeometryEffect(id: "storyOpen", in: matchedGeo))
+									{
+										StoryRow(story: s)
+										
+									}//.matchedGeometryEffect(id: "storyOpen", in: matchedGeo)
+								}
+								
 							}
 						}
 					}

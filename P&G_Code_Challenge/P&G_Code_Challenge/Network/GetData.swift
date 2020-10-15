@@ -7,15 +7,19 @@ import Foundation
 
 class GetData: ObservableObject {
 	@Published var loading = false
-	@Published var stories = [Story]()
+	//@Published var comments = [String : [Comment]]()
+	@Published var stories = [Story?](repeating: nil, count: 500) //initialize this to a value of 500
 	
 	init(){
 		loading = true
-		stories.append(Story(id: 1, type: "job", by: "Chad", time: 1175714200, text: "Test text", url: "www.apple.com", score: 1, title: "Test Title", descendants: 2))
-		stories.append(Story(id: 2, type: "story", by: "Chad", time: 1175714200, text: "Test text", url: "www.apple.com", score: 1, title: "Test Title 2", descendants: 2))
+		
+		var array = [Int:Int]()
+		getTopStories { (array) in
+			//print(array)
+		}
 	}
 	
-	func getTopStories(completion:@escaping ([Int]) -> Void){
+	func getTopStories(completion:@escaping ([Int:Int]) -> Void){
 		let url = NSURL(string: "https://hacker-news.firebaseio.com/v0/topstories.json?print=pretty")
 		URLSession.shared.dataTask(with: url! as URL) { (data, response, error) in
 			if error != nil {
@@ -26,14 +30,29 @@ class GetData: ObservableObject {
 			do {
 				let json = try JSONSerialization.jsonObject(with: data!, options: .mutableContainers)
 				
-				var topStories = [Int]()
-				for story in json as! [Int] {
-					let storyID = story as Int
-					topStories.append(storyID)
+				var topStories = [Int:Int]()
+				var index = 0
+								
+				if let jsonArray = json as? [Int] {
+					for story in jsonArray {
+						let storyID = story as Int
+						topStories[storyID] = index
+						index += 1
+						//topStories.append(storyID)
+						
+						self.getStoryData(id: "\(storyID)") { (story) in
+							print("Storyid", story.id)
+							
+							DispatchQueue.main.async {
+								self.stories.insert(story, at: topStories[Int(story.id)!]!) //insert at a given ID
+							}
+						}
+						index += 1
+					}
 				}
 				
 				completion(topStories)
-				print(topStories)
+				//print(topStories)
 			} catch let jsonError {
 				print(jsonError)
 			}
@@ -53,17 +72,9 @@ class GetData: ObservableObject {
 			guard let data = data else {return}
 			
 			do {
-				//let json = try JSONSerialization.jsonObject(with: data!, options: .mutableContainers)
-				
-				//TODO convert to Story
-				//let decoder = JSONDecoder()
-				//let hackerStory = try decoder.decode(Story.self, from: json as! Data)
-				
 				let hackerStory = try JSONDecoder().decode(Story.self, from: data)
 
-				
 				completion(hackerStory)
-				//print(json)
 			} catch let jsonError {
 				print(jsonError)
 			}
@@ -71,22 +82,48 @@ class GetData: ObservableObject {
 		}.resume()
 	}
 
+	func getCommentHTTP(commentID: String, completion:@escaping (Comment) -> Void){
+		let url = NSURL(string: "https://hacker-news.firebaseio.com/v0/item/" + commentID + ".json?print=pretty")
+		
+		URLSession.shared.dataTask(with: url! as URL) { (data, response, error) in
+			if error != nil {
+				print(error as Any)
+				return
+			}
+			
+			guard let data = data else {return}
+			
+			do {
+				let comment = try JSONDecoder().decode(Comment.self, from: data)
 
-	//TODO figure out how to work with the completion stuff
-	//func buildTopSotries() -> [Story]{
-	//	var topStoryIDs = [Int]()
-	//	getTopStories { (topStoryIDs) in
-	//		var topStories = [Story]()
-	//
-	//		for Int in topStoryIDs{
-	//			getStoryData(id: String(Int)) { (temp) in
-	//				topStories.append(temp)
-	//			}
-	//		}
-	//		self.loading = false
-	//	}
-	//
-	//
-	//
-	//}
+//				story.comments.append(comment)
+				
+				completion(comment)
+			} catch let jsonError {
+				print(jsonError)
+			}
+			
+		}.resume()
+	}
+	
+//	func getComments(story : Story) -> [Comment]{
+//
+//
+//
+//		if comments[story.id] != nil {
+//			return comments[story.id]!
+//		} else if story.kids != nil{
+//			for kid in story.kids! {
+//				getCommentsHTTP(id: kid){ [self] (temp) in
+//					if self.comments.capacity > 9 {
+//						var firstKey = comments.first?.key
+//						comments.removeValue(forKey: firstKey!)
+//					}
+//					comments[story.id]!.append(temp)
+//				}
+//			}
+//		}
+//
+//
+//	}
 }

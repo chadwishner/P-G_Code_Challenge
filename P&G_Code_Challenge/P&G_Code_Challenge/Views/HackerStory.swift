@@ -3,6 +3,8 @@
 //
 //  Created by Chad Wishner on 10/12/20.
 
+//TODO CHANGE TO VIEW COMMENTS
+
 import SwiftUI
 
 struct HackerStory: View {
@@ -33,14 +35,22 @@ struct HackerStory: View {
 				}
 			Spacer()
 			}
-			Text(story.text!)
+			Text(story.text ?? "")
 				.font(.system(size: 16, design: .default))
 				.foregroundColor(.white)
 				.padding(.horizontal, 10.0)
-	//must figure out how to make this a list of comments
+			
+			for commendID in story.comments {
+				getData.getCommentHTTP(commentID: commendID) { (newComment) in
+					self.story.comments.append(newComment)
+				}
+				
+			}
+			
+//change this to a list of comments
 			List(getData.stories){ story in //prob needs to be getData.comments, but need to figure out how to get it specific to indiv posts
-				StoryRow(story: story)
-				//CommentView(comment: comment)
+				//StoryRow(story: story)
+				CommentView(comment: comment)
 			}
 			.onAppear{
 				UITableView.appearance().separatorStyle = .none
@@ -58,6 +68,6 @@ struct HackerStory: View {
 
 struct HackerStory_Previews: PreviewProvider {
     static var previews: some View {
-		HackerStory(story: Story(id: 1, type: "story", by: "Chad", time: 1175714200, text: "Test text afdbwerfjberigerkjghnerighnerkjghergheroigheriogergiohoerihgeriohgerg", url: "www.apple.com", score: 1, title: "P&G iOS Test awdadaddad", descendants: 2))
+		HackerStory(story: Story(id: "1", type: "story", by: "Chad", time: 1175714200, text: "Test text afdbwerfjberigerkjghnerighnerkjghergheroigheriogergiohoerihgeriohgerg", url: "www.apple.com", score: "1", title: "P&G iOS Test awdadaddad", descendants: "2"))
     }
 }

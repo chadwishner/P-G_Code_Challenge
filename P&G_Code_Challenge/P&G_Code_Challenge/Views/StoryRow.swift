@@ -24,7 +24,7 @@ struct StoryRow: View {
 					.font(.system(size: 16, weight: .bold, design: .default))
 					.foregroundColor(.gray)
 				HStack {
-					Text(String(story.score!) + " points by " + story.by)
+					Text(story.score! + " points by " + story.by)
 						.font(.system(size: 13, weight: .bold, design: .default))
 						.foregroundColor(.white)
 						.padding(.top, 8)
@@ -42,6 +42,6 @@ struct StoryRow: View {
 
 struct StoryRow_Previews: PreviewProvider {
     static var previews: some View {
-		StoryRow(story: Story(id: 1, type: "job", by: "Chad", time: 1175714200, text: "Test text", url: "www.apple.com", score: 1, title: "Test Title", descendants: 2))
+		StoryRow(story: Story(id: "1", type: "job", by: "Chad", time: 1175714200, text: "Test text", url: "www.apple.com", score: "1", title: "Test Title", descendants: "2"))
     }
 }

@@ -2,7 +2,6 @@
 //  P&G_Code_Challenge
 //
 //  Created by Chad Wishner on 10/12/20.
-//
 
 import SwiftUI
 
