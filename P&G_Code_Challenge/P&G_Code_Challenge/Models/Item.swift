@@ -16,12 +16,12 @@ struct Item: Decodable, Identifiable, Hashable {
 	var time: Int
 	var text: String?
 	//var dead: Bool?
-	var parent: String?
+	var parent: Int?
 	var poll: String?
 	var kids: [Int]?
 	var url: String?
 	var score: Int?
-	var title: String
+	var title: String?
 	var parts: [Int]?
 	var descendants: Int?
 	

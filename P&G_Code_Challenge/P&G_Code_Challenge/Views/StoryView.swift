@@ -3,10 +3,6 @@
 //
 //  Created by Chad Wishner on 10/12/20.
 
-//TODO CHANGE TO VIEW COMMENTS
-	//fix getData
-	//call getComments for each child
-
 import SwiftUI
 
 /** Story view struct to handle detailed story information including:
@@ -19,9 +15,8 @@ import SwiftUI
 */
 struct StoryView: View {
 	
-	// Allow view to update on new data (for comments)
-	@ObservedObject  var getData = GetStoryData()
-	@ObservedObject var getCommentData = GetCommentData()
+	// Allow view to update on new data
+	@ObservedObject  var getData = GetData(forStories: false)
 	
 	// Namespace required for opening animation
 	@Namespace private var matchedGeo
@@ -51,7 +46,7 @@ struct StoryView: View {
 						.padding(.all, 20)
 				}
 				VStack(alignment: .leading) {
-					Text(story.title)
+					Text(story.title!)
 						.font(.system(size: 15, weight: .bold, design: .default))
 						.foregroundColor(.white)
 						.padding([.top, .trailing], 10)
@@ -77,7 +72,11 @@ struct StoryView: View {
 			}
 
 			// Create list of comments
-			List(Array(getCommentData.comments.values)){ comment in
+			List(Array(getData.items.values).filter{
+				// Filter to make sure we are only displaying comments
+				$0.type == "comment" ? true : false
+			}){ comment in
+				// Build comment view
 				CommentView(comment: comment)
 			}
 			.onAppear{
@@ -91,9 +90,10 @@ struct StoryView: View {
 		.shadow(color: Color.black.opacity(0.2), radius: 20, x: 0, y: 0)
 		.padding(.all, 10)
 //		.matchedGeometryEffect(id: "storyOpen", in: matchedGeo)
+		
 		// Load comment data when the view appears
 		.onAppear{
-			getCommentData.getAllComments(story: self.story)
+			getData.getAllComments(item: self.story)
 		}
     }
 }

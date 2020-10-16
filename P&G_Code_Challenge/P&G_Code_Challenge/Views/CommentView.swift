@@ -12,10 +12,10 @@ import SwiftUI
 struct CommentView: View {
 	// This is to switch text color based on system color (light:dark)
 	@Environment(\.colorScheme) var colorScheme
-	@ObservedObject var getCommentData = GetCommentData()
+	@ObservedObject var getData = GetData(forStories: false)
 	
 	// Param to format a Comment
-	var comment: Comment
+	var comment: Item
 	
 	// Comment format
 	var body: some View {
@@ -29,15 +29,19 @@ struct CommentView: View {
 				.font(.system(size: 10, weight: .bold, design: .default))
 				.foregroundColor(.gray)
 				.padding(.horizontal, 10.0)
+			// Get Sub-Comments if available
 			if (comment.kids != nil) {
-				List(Array(getCommentData.comments.values)){ comment in
-					CommentView(comment: comment)
-						.fixedSize(horizontal: false, vertical: true)
+				List(Array(getData.items.values).filter{
+					// Make sure we only display comments
+					$0.type == "comment" ? true : false
+			 }){ comment in
+					CommentView(comment: comment).fixedSize(horizontal: false, vertical: true)
 				}
 			}
 		}
+		// Retrieve all sub-comments
 		.onAppear{
-			getCommentData.getAllSubComments(comment: self.comment)
+			getData.getAllComments(item: self.comment)
 		}
     }
 }
@@ -46,6 +50,6 @@ struct CommentView: View {
 */
 struct CommentView_Previews: PreviewProvider {
     static var previews: some View {
-        CommentView(comment: Comment(id: 3, type: "comment", by: "Chad", time: 1245, text: "This is a comment", parent: 1))
+		CommentView(comment: Item(id: 3, type: "comment", by: "Chad", time: 1245, text: "This is a comment", parent: 1))
     }
 }

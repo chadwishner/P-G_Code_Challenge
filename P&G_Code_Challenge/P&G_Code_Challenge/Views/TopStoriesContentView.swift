@@ -11,7 +11,7 @@ import SwiftUI
 */
 struct TopStoriesContentView: View {
 	// Allow view to update on new data
-	@ObservedObject  var getData = GetStoryData()
+	@ObservedObject  var getData = GetData(forStories: true)
 	
 	// Namespace required for opening animation
 	@Namespace private var matchedGeo
@@ -59,22 +59,36 @@ struct TopStoriesContentView: View {
 						SearchBar(text: $searchText)
 						
 						LazyVStack{
-							ForEach(getData.stories.filter{
-								// Filter checks if search bar is empty, then checks if the Story is not nil, then evaluates .contain
-								self.searchText.isEmpty ? true : (($0 != nil) ? $0!.title.lowercased().contains(self.searchText) : true)
-							}, id: \.self){ story in
-								// if let used to make sure that the story exists in the stories array
-								if let s = story {
-									NavigationLink(destination: StoryView(story: s)/*.matchedGeometryEffect(id: "storyOpen", in: matchedGeo)*/){
-										StoryRowView(story: s)
-									}//.matchedGeometryEffect(id: "storyOpen", in: matchedGeo)
-									.onAppear(){
-										if s == getData.stories.last{
-											//getData.getNextStories(int: 10)
-										}
+							ForEach(Array(getData.items.values).filter{
+								// Filter checks if items are not comments
+								if($0.type != "comment"){
+									// Filter checks if search bar is empty, then checks if the Story is not nil, then evaluates .contain
+									if (self.searchText.isEmpty){
+										return true
+									} else if ($0.title != nil){
+										return $0.title!.lowercased().contains(self.searchText)
+									} else {
+										return true
 									}
+								} else {
+									return false
+								}
+							}, id: \.self){ story in
+								// If let used to make sure that the story exists in the stories array
+								if let s = story {
+										NavigationLink(destination: StoryView(story: s)/*.matchedGeometryEffect(id: "storyOpen", in: matchedGeo)*/){
+											StoryRowView(story: s)
+										}//.matchedGeometryEffect(id: "storyOpen", in: matchedGeo)
+
+										// Load the next stories in topStories when we reach end of list
+//										.onAppear(){
+//											if (s == getData.items.last){
+//												//getData.getNextStories(int: 10)
+//											}
+//										}
 								}
 							}
+							// Load the next stories in topStories when we reach end of list
 //							.onAppear {
 //								if (self.getData.stories.last != nil){
 //									getData.getNextStories(int: 20)

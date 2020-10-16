@@ -33,7 +33,7 @@ struct StoryRowView: View {
 			}
 					
 			VStack(alignment: .leading) {
-				Text(story.title)
+				Text(story.title!)
 					.font(.system(size: 15, weight: .bold, design: .default))
 					.foregroundColor(.white)
 					.padding(.top, 10)
