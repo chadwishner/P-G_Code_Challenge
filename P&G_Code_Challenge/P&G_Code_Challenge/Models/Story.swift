@@ -21,7 +21,7 @@ struct Story: Decodable, Identifiable, Hashable {
 	var kids: [Int]?
 	var url: String?
 	var score: Int?
-	var title: String?
+	var title: String
 	//var parts: [Int]?
 	var descendants: Int?
 	

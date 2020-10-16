@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		672870882538E3BB0091258A /* GetCommentData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 672870872538E3BB0091258A /* GetCommentData.swift */; };
+		67287099253919330091258A /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67287098253919330091258A /* SearchBar.swift */; };
 		6729B9E8253506D300565312 /* P_G_Code_ChallengeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6729B9E7253506D300565312 /* P_G_Code_ChallengeApp.swift */; };
 		6729B9EA253506D300565312 /* TopStoriesContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6729B9E9253506D300565312 /* TopStoriesContentView.swift */; };
 		6729B9EC253506D700565312 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6729B9EB253506D700565312 /* Assets.xcassets */; };
@@ -42,6 +43,7 @@
 
 /* Begin PBXFileReference section */
 		672870872538E3BB0091258A /* GetCommentData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCommentData.swift; sourceTree = "<group>"; };
+		67287098253919330091258A /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		6729B9E4253506D300565312 /* P&G_Code_Challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "P&G_Code_Challenge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6729B9E7253506D300565312 /* P_G_Code_ChallengeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = P_G_Code_ChallengeApp.swift; sourceTree = "<group>"; };
 		6729B9E9253506D300565312 /* TopStoriesContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopStoriesContentView.swift; sourceTree = "<group>"; };
@@ -174,6 +176,7 @@
 				6729BA1825350A0B00565312 /* StoryView.swift */,
 				673727D825375B6100572C89 /* CommentView.swift */,
 				673727DD25389C5500572C89 /* WebView.swift */,
+				67287098253919330091258A /* SearchBar.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -316,6 +319,7 @@
 				673727D425375AF100572C89 /* Comment.swift in Sources */,
 				6729B9E8253506D300565312 /* P_G_Code_ChallengeApp.swift in Sources */,
 				678D3C702536612A0006D495 /* StoryRowView.swift in Sources */,
+				67287099253919330091258A /* SearchBar.swift in Sources */,
 				6729BA1E25350A9E00565312 /* Story.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -475,6 +479,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"P&G_Code_Challenge/Preview Content\"";
+				DEVELOPMENT_TEAM = K2UMYETYC8;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "P&G_Code_Challenge/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -496,6 +501,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"P&G_Code_Challenge/Preview Content\"";
+				DEVELOPMENT_TEAM = K2UMYETYC8;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "P&G_Code_Challenge/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;

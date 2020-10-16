@@ -14,16 +14,26 @@ struct StoryRowView: View {
 	// Card format
 	var body: some View {
 		HStack(alignment: .center) {
-			
-			// Dynamic Image to display based on type. If there is a url, then a safari icon is displayed
-			Image((story.url != nil) ? "link" : story.type)
-				.resizable()
-				.aspectRatio(contentMode: .fit)
-				.frame(width: 50, height: 50)
-				.padding(.all, 20)
+			// If a url exists allow users to click on image to open webView when available
+			if (story.url != nil){
+				NavigationLink(destination: WebView(url: story.url!)){
+					Image("link")
+						.resizable()
+						.aspectRatio(contentMode: .fit)
+						.frame(width: 50, height: 50)
+						.padding(.all, 20)
+				}
+			} else {
+				// Dynamic Image to display based on type. If there is a url, then a safari icon is displayed
+				Image(story.type)
+					.resizable()
+					.aspectRatio(contentMode: .fit)
+					.frame(width: 50, height: 50)
+					.padding(.all, 20)
+			}
 					
 			VStack(alignment: .leading) {
-				Text(story.title!)
+				Text(story.title)
 					.font(.system(size: 15, weight: .bold, design: .default))
 					.foregroundColor(.white)
 					.padding(.top, 10)

@@ -21,13 +21,15 @@ struct TopStoriesContentView: View {
 	@State var leftOffset: CGFloat = -100
 	@State var rightOffset: CGFloat = 100
 	
+	@State private var searchText : String = ""
+	
 	var body: some View {
 		// Use a NavigationView for path hierarchy
 		NavigationView{
 			// VStack used for layering loading animation
 			VStack{
 				// Loading animation
-				if false {
+				if getData.loading {
 					ZStack {
 						Circle()
 							.fill(Color.blue)
@@ -53,11 +55,17 @@ struct TopStoriesContentView: View {
 				} else {
 					// ScrollView and LazyVStack used in order to avoid visual attributes of a List
 					ScrollView{
+						// SearchBar for searching titles
+						SearchBar(text: $searchText)
+						
 						LazyVStack{
-							ForEach(getData.stories, id: \.self){ story in
+							ForEach(getData.stories.filter{
+								// Filter checks if search bar is empty, then checks if the Story is not nil, then evaluates .contain
+								self.searchText.isEmpty ? true : (($0 != nil) ? $0!.title.lowercased().contains(self.searchText) : true)
+							}, id: \.self){ story in
 								// if let used to make sure that the story exists in the stories array
 								if let s = story {
-									NavigationLink(destination: StoryView(story: s).matchedGeometryEffect(id: "storyOpen", in: matchedGeo)){
+									NavigationLink(destination: StoryView(story: s)/*.matchedGeometryEffect(id: "storyOpen", in: matchedGeo)*/){
 										StoryRowView(story: s)
 									}//.matchedGeometryEffect(id: "storyOpen", in: matchedGeo)
 								}

@@ -38,9 +38,14 @@ class GetCommentData: ObservableObject {
 				guard let data = data else {return}
 				
 				do {
-					let comment = try JSONDecoder().decode(Comment.self, from: data)
+					var comment = try JSONDecoder().decode(Comment.self, from: data)
 
-					
+					if comment.text != nil {
+						let badText = Data(comment.text!.utf8)
+						if let newText = try? NSAttributedString(data: badText, options: [.documentType: NSAttributedString.DocumentType.html], documentAttributes: nil) {
+							comment.text = newText.string
+						}
+					}
 //					DispatchQueue.main.async {
 //
 //					}

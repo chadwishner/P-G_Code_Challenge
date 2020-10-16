@@ -5,31 +5,24 @@
 
 import Foundation
 import SwiftUI
-import WebKit
+import SafariServices
 
 /** Web view struct to open url of a qualified story
 */
-struct WebView: UIViewRepresentable {
-	// Necessary function for UIViewRepresentable
-	func updateUIView(_ uiView: UIViewType, context: Context) {
-	}
-	
-	// Param for url
-	var url: String
-	
-	/** Function to return WKWebView
-	*/
-	func makeUIView(context: Context) -> some WKWebView {
-		// Create URL if prossible else return empty WKWebView
-		guard let url = URL(string: self.url) else {
-			return WKWebView()
-		}
+struct WebView: UIViewControllerRepresentable {
+	let url: String
+
+	// Build and return SafariViewController
+	func makeUIViewController(context: UIViewControllerRepresentableContext<WebView>) -> SFSafariViewController {
+		// Convert string to URL
+		let url = URL(string: self.url)!
 		
-		// Build and return WKWebView
-		let request = URLRequest(url: url)
-		let wkWebView = WKWebView()
-		wkWebView.load(request)
-		return wkWebView
-    }
+		return SFSafariViewController(url: url)
+	}
+
+	// Required function for UIViewControllerRepresentable
+	func updateUIViewController(_ uiViewController: SFSafariViewController, context: UIViewControllerRepresentableContext<WebView>) {
+
+	}
 	
 }

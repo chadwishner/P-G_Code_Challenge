@@ -6,15 +6,16 @@
 import Foundation
 
 class GetStoryData: ObservableObject {
-	//@Published var loading = false
+	@Published var loading = false
 	@Published var stories = [Story?](repeating: nil, count: 500)
 	
 	init(){
-		//loading = true
+		loading = true
 		
 		getTopStories { (topStories) in
 //			print(topStories)
 		}
+		loading = false
 	}
 	
 	func getTopStories(completion:@escaping ([Int:Int]) -> Void){
@@ -40,6 +41,7 @@ class GetStoryData: ObservableObject {
 						self.getStoryData(id: "\(storyID)") { (story) in
 							
 							DispatchQueue.main.async { [self] in
+								
 								self.stories.insert(story, at: topStories[story.id]!) //insert at a given ID
 //								print("Storyid", story.id)
 //								print("at", topStories[story.id]!)
@@ -69,7 +71,14 @@ class GetStoryData: ObservableObject {
 			guard let data = data else {return}
 			
 			do {
-				let hackerStory = try JSONDecoder().decode(Story.self, from: data)
+				var hackerStory = try JSONDecoder().decode(Story.self, from: data)
+				if hackerStory.text != nil {
+					let badText = Data(hackerStory.text!.utf8)
+					if let newText = try? NSAttributedString(data: badText, options: [.documentType: NSAttributedString.DocumentType.html], documentAttributes: nil) {
+						hackerStory.text = newText.string
+					}
+				}
+				
 
 				completion(hackerStory)
 			} catch let jsonError {

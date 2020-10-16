@@ -5,6 +5,8 @@
  - List of top 500 Hacker News stories in a scrollable view
  - Tapping a story opens a view with more information on the story including comments
  - If the story has a link, a safari icon is shown that can be tapped to open a WebView of the link.
+ - Search bar for story titles
+ - HTML markers have been removed from text for Stories and Comments are in plain HTML.
  - SwiftUI was used so the application is compatible with iOS13+
 
 ## Current issues/areas for improvement
@@ -12,6 +14,7 @@
  - I am running into issues trying to figure out how to add animations to the app. I am attempting to add a .matchedGeometryEffect for the transition to/from a StoryRowView and a StoryView.
  - Currently the Network classes do not add Stories or Comments into their arrays in order they are sent, this causes out of order issues.
  - Occasionally the API calls will timeout this causes a delay in retrieving stories and comments.
+ - The scrollview does not resize when search bar narrows list.
 
 ## Files
 

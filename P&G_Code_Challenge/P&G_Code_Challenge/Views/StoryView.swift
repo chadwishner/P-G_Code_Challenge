@@ -33,19 +33,25 @@ struct StoryView: View {
 	var body: some View {
 		VStack(alignment: .center) {
 			HStack(alignment: .top) {
-				
-				// Image places in navigation link to allow users to click on image to open webView when available
-				NavigationLink(destination: (story.url != nil) ? WebView(url: story.url!) : nil){ //can i put nil here?????
-					
+				// If a url exists allow users to click on image to open webView when available
+				if (story.url != nil){
+					NavigationLink(destination: WebView(url: story.url!)){
+						Image("link")
+							.resizable()
+							.aspectRatio(contentMode: .fit)
+							.frame(width: 50, height: 50)
+							.padding(.all, 20)
+					}
+				} else {
 					// Dynamic Image to display based on type. If there is a url, then a safari icon is displayed
-					Image((story.url != nil) ? "link" : story.type)
+					Image(story.type)
 						.resizable()
 						.aspectRatio(contentMode: .fit)
 						.frame(width: 50, height: 50)
 						.padding(.all, 20)
 				}
 				VStack(alignment: .leading) {
-					Text(story.title!)
+					Text(story.title)
 						.font(.system(size: 15, weight: .bold, design: .default))
 						.foregroundColor(.white)
 						.padding([.top, .trailing], 10)
@@ -57,18 +63,20 @@ struct StoryView: View {
 							.padding(.top, 0.5)
 					}.padding(.bottom, 10)
 				}
-			//Spacer()
+			Spacer()
 			}
 			
-			// if text is available, diplay, otherwise leave blank
+			// If text is available, diplay, otherwise leave blank
 			if ((story.text) != nil){
-				Text(story.text ?? "")
-					.font(.system(size: 12, design: .default))
-					.foregroundColor(.white)
-					.padding([.leading, .bottom, .trailing], 10.0)
+				ScrollView {
+					Text(story.text ?? "")
+						.font(.system(size: 12, design: .default))
+						.foregroundColor(.white)
+						.padding([.leading, .bottom, .trailing], 10.0)
+				}
 			}
 
-//			getCommentData.getAllComments(story: self.story)
+			// Create list of comments
 			List(getCommentData.comments){ comment in
 				CommentView(comment: comment)
 			}
@@ -82,7 +90,8 @@ struct StoryView: View {
 		.cornerRadius(20)
 		.shadow(color: Color.black.opacity(0.2), radius: 20, x: 0, y: 0)
 		.padding(.all, 10)
-		//.matchedGeometryEffect(id: "storyOpen", in: matchedGeo)
+//		.matchedGeometryEffect(id: "storyOpen", in: matchedGeo)
+		// Load comment data when the view appears
 		.onAppear{
 			getCommentData.getAllComments(story: self.story)
 		}
