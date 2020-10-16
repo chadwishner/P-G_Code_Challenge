@@ -72,7 +72,7 @@ struct StoryView: View {
 			}
 
 			// Create list of comments
-			List(Array(getData.items.values).filter{
+			List(getData.items.filter{
 				// Filter to make sure we are only displaying comments
 				$0.type == "comment" ? true : false
 			}){ comment in

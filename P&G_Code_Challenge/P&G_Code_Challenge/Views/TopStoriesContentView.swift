@@ -59,7 +59,7 @@ struct TopStoriesContentView: View {
 						SearchBar(text: $searchText)
 						
 						LazyVStack{
-							ForEach(Array(getData.items.values).filter{
+							ForEach(getData.items.filter{
 								// Filter checks if items are not comments
 								if($0.type != "comment"){
 									// Filter checks if search bar is empty, then checks if the Story is not nil, then evaluates .contain

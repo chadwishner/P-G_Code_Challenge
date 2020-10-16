@@ -31,7 +31,7 @@ struct CommentView: View {
 				.padding(.horizontal, 10.0)
 			// Get Sub-Comments if available
 			if (comment.kids != nil) {
-				List(Array(getData.items.values).filter{
+				List(getData.items.filter{
 					// Make sure we only display comments
 					$0.type == "comment" ? true : false
 			 }){ comment in

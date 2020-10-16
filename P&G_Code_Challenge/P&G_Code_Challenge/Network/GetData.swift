@@ -13,10 +13,12 @@ class GetData: ObservableObject {
 	// Loading variable used for loading animation on TopStoriesContentView
 	@Published var loading = false
 	
-	// Dictionary containing all values, ID to Item, this allows quicker lookup of ID
-	@Published var items = [Int: Item]()
+	// Published sorted array of Items
+	@Published var items = [Item]()
 	
-	@publiashed var sortedItems = [Int]()
+	// Dictionary containing all values, ID to Item, this allows quicker lookup of ID for checking duplicates
+	// Unless there is some trick with arrays that allows you to find if an element exists based on Item.ID
+	var itemsDict = [Int: Item]()
 	
 	// Local variable for 500 Top Stories
 	var topStories = [Int]()
@@ -27,11 +29,8 @@ class GetData: ObservableObject {
 	*/
 	init(forStories: Bool){
 		if forStories {
-			loading = true
-			
 			getTopStories { (topStories) in
 			}
-			loading = false
 		}
 	}
 	
@@ -134,7 +133,10 @@ class GetData: ObservableObject {
 			getItemData(id: String(int)){ (story) in
 				DispatchQueue.main.async{
 					// Add new stories to the dictionary
-					self.items[int] = story
+					self.itemsDict[int] = story
+					
+					// Sort items array, unfortunetly this has to be done each time an item is added...
+					self.sortItemArray(parentArray: self.topStories)
 				}
 			}
 		}
@@ -150,16 +152,38 @@ class GetData: ObservableObject {
 			for kid in item.kids! {
 				
 				// Want to doublecheck that we are not getting duplicates, this could happen if a user leaves a view and returns hack to it
-				if !items.keys.contains(kid){
+				if !itemsDict.keys.contains(kid){
 					getItemData(id: String(kid)) { (newComment) in
 						DispatchQueue.main.async{
 							
 							// Add new comments to the dictionary
-							self.items[kid] = (newComment)
+							self.itemsDict[kid] = (newComment)
+							
+							// Sort items array, unfortunetly this has to be done each time an item is added...
+							self.sortItemArray(parentArray: item.kids!)
 						}
 					}
 				}
 			}
 		}
+	}
+	
+	/** Sorting function to provide a sorted array of Items based on a parent array
+	The parent array is whatever array stores the sorted IDs of the non-sorted set. For stories this is the topStories array, for comments it is the Story.kids array
+	*/
+	func sortItemArray(parentArray: [Int]){
+		
+		// Set loading to true so we can display loading animation
+		loading = true
+		
+		// Sort and add to array
+		self.items = Array(self.itemsDict.values).sorted{
+			
+			// Compare the index that the item's ID exists in the parent array
+			return parentArray.firstIndex(of: $0.id)! < parentArray.firstIndex(of: $1.id)!
+		}
+		
+		// Set loading to false so we can hide loading animation
+		loading = false
 	}
 }
