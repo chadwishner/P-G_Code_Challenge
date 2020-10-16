@@ -1,0 +1,17 @@
+platform :ios, '12.0'
+
+target 'P&G_Code_Challenge' do
+  use_frameworks!
+
+  # Pods for P&G_Code_Challenge
+
+  target 'P&G_Code_ChallengeTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'P&G_Code_ChallengeUITests' do
+    # Pods for testing
+  end
+
+end

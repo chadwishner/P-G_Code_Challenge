@@ -3,12 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		672870882538E3BB0091258A /* GetCommentData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 672870872538E3BB0091258A /* GetCommentData.swift */; };
 		67287099253919330091258A /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67287098253919330091258A /* SearchBar.swift */; };
+		672870A22539D6A20091258A /* SwiftUIPullToRefresh in Frameworks */ = {isa = PBXBuildFile; productRef = 672870A12539D6A20091258A /* SwiftUIPullToRefresh */; };
 		6729B9E8253506D300565312 /* P_G_Code_ChallengeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6729B9E7253506D300565312 /* P_G_Code_ChallengeApp.swift */; };
 		6729B9EA253506D300565312 /* TopStoriesContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6729B9E9253506D300565312 /* TopStoriesContentView.swift */; };
 		6729B9EC253506D700565312 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6729B9EB253506D700565312 /* Assets.xcassets */; };
@@ -16,7 +17,7 @@
 		6729B9FA253506D700565312 /* P_G_Code_ChallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6729B9F9253506D700565312 /* P_G_Code_ChallengeTests.swift */; };
 		6729BA05253506D700565312 /* P_G_Code_ChallengeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6729BA04253506D700565312 /* P_G_Code_ChallengeUITests.swift */; };
 		6729BA1925350A0B00565312 /* StoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6729BA1825350A0B00565312 /* StoryView.swift */; };
-		6729BA1E25350A9E00565312 /* Story.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6729BA1D25350A9E00565312 /* Story.swift */; };
+		6729BA1E25350A9E00565312 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6729BA1D25350A9E00565312 /* Item.swift */; };
 		6729BA232535131F00565312 /* GetStoryData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6729BA222535131F00565312 /* GetStoryData.swift */; };
 		673727D425375AF100572C89 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 673727D325375AF100572C89 /* Comment.swift */; };
 		673727D925375B6100572C89 /* CommentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 673727D825375B6100572C89 /* CommentView.swift */; };
@@ -57,7 +58,7 @@
 		6729BA04253506D700565312 /* P_G_Code_ChallengeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = P_G_Code_ChallengeUITests.swift; sourceTree = "<group>"; };
 		6729BA06253506D700565312 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6729BA1825350A0B00565312 /* StoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryView.swift; sourceTree = "<group>"; };
-		6729BA1D25350A9E00565312 /* Story.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Story.swift; sourceTree = "<group>"; };
+		6729BA1D25350A9E00565312 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		6729BA222535131F00565312 /* GetStoryData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetStoryData.swift; sourceTree = "<group>"; };
 		673727D325375AF100572C89 /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		673727D825375B6100572C89 /* CommentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentView.swift; sourceTree = "<group>"; };
@@ -70,6 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				672870A22539D6A20091258A /* SwiftUIPullToRefresh in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -153,7 +155,7 @@
 		678D3C6C25365A2C0006D495 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				6729BA1D25350A9E00565312 /* Story.swift */,
+				6729BA1D25350A9E00565312 /* Item.swift */,
 				673727D325375AF100572C89 /* Comment.swift */,
 			);
 			path = Models;
@@ -197,6 +199,9 @@
 			dependencies = (
 			);
 			name = "P&G_Code_Challenge";
+			packageProductDependencies = (
+				672870A12539D6A20091258A /* SwiftUIPullToRefresh */,
+			);
 			productName = "P&G_Code_Challenge";
 			productReference = 6729B9E4253506D300565312 /* P&G_Code_Challenge.app */;
 			productType = "com.apple.product-type.application";
@@ -268,6 +273,9 @@
 				Base,
 			);
 			mainGroup = 6729B9DB253506D300565312;
+			packageReferences = (
+				672870A02539D6A00091258A /* XCRemoteSwiftPackageReference "SwiftUI-PullToRefresh" */,
+			);
 			productRefGroup = 6729B9E5253506D300565312 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -320,7 +328,7 @@
 				6729B9E8253506D300565312 /* P_G_Code_ChallengeApp.swift in Sources */,
 				678D3C702536612A0006D495 /* StoryRowView.swift in Sources */,
 				67287099253919330091258A /* SearchBar.swift in Sources */,
-				6729BA1E25350A9E00565312 /* Story.swift in Sources */,
+				6729BA1E25350A9E00565312 /* Item.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -636,6 +644,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		672870A02539D6A00091258A /* XCRemoteSwiftPackageReference "SwiftUI-PullToRefresh" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AppPear/SwiftUI-PullToRefresh";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		672870A12539D6A20091258A /* SwiftUIPullToRefresh */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 672870A02539D6A00091258A /* XCRemoteSwiftPackageReference "SwiftUI-PullToRefresh" */;
+			productName = SwiftUIPullToRefresh;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 6729B9DC253506D300565312 /* Project object */;
 }

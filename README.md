@@ -6,15 +6,15 @@
  - Tapping a story opens a view with more information on the story including comments
  - If the story has a link, a safari icon is shown that can be tapped to open a WebView of the link.
  - Search bar for story titles
- - HTML markers have been removed from text for Stories and Comments are in plain HTML.
+ - HTML markers have been removed from text for Stories and Comments are in plain HTML. Upon further inspection of comments, it may be a good idea to create a custom view that interprets the HTML in order to maintain HTML formatting.
+ - Necessary text changes color dynamically based on system color (light:dark)
  - SwiftUI was used so the application is compatible with iOS13+
 
 ## Current issues/areas for improvement
 
  - I am running into issues trying to figure out how to add animations to the app. I am attempting to add a .matchedGeometryEffect for the transition to/from a StoryRowView and a StoryView.
  - Currently the Network classes do not add Stories or Comments into their arrays in order they are sent, this causes out of order issues.
- - Occasionally the API calls will timeout this causes a delay in retrieving stories and comments.
- - The scrollview does not resize when search bar narrows list.
+ - I attempted to add a "pull down to refresh" feature to the app, but all available libraries were either out of date or seem to be very laggy and hurt the usability of the app more then it helped.
 
 ## Files
 
@@ -44,9 +44,13 @@ Current implementation uses a URLSession to call */topstories.json* and builds a
 
 Current implementation uses a URLSession to call */item/[ID].json* and uses a JSONDecoder to decode the response into the **Story** struct. A *Story* is returned.
 
+**getNextStories(int: Int)**
+
+This function is designed to load a specific number of stories into the **Story** array. This function is intended to ease the load by only makeing API calls when the user reaches the botom of the current viewable stories.
+
 ### Network/GetCommentData.swift
 
-Similar to GetStoryData.swift, this file is designed to retrieve data for the children of a Story, story it in an array of Comments. Currently the main issue is that comments are not added to the array in the same order that they are sent out. These means that some comments will appear lower/higher on the ContentView. **GetCommentData()** is instantiated with StoryView starts and .onAppear it begins to retreive the data. I decided to implement the comment retrieval as a separate class because I was running into barriers trying to update stories that were passed by reference with a closure. The original intent was to have an array of *comment* in the **Story** struct that would be updated when the story is selected. This would allow more efficient use of the API. I would still like to explore this issue but currently don't know the solution. Furthermore this implementation should make is a little easier to get sub-comments; however, I am unsure how to handle the view side of sub-comments.
+Similar to GetStoryData.swift, this file is designed to retrieve data for the children of a Story, story it in an array of Comments. Currently the main issue is that comments are not added to the array in the same order that they are sent out. These means that some comments will appear lower/higher on the ContentView. **GetCommentData()** is instantiated with StoryView starts and .onAppear it begins to retreive the data. I decided to implement the comment retrieval as a separate class because I was running into barriers trying to update stories that were passed by reference with a closure. The original intent was to have an array of *comment* in the **Story** struct that would be updated when the story is selected. This would allow more efficient use of the API. However, by making the array dependendent on the comment view, we can maintain existance and just check if those comments were already retrieced. Furthermore this implementation should make is a little easier to get sub-comments; however, I am unsure how to handle the view side of sub-comments.
 
 **getAllComments(story: Story)**
 

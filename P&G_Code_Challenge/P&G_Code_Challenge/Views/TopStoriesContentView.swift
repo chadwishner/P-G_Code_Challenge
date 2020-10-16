@@ -10,7 +10,7 @@ import SwiftUI
 /** Main view struct to handle home page to show card list of articles
 */
 struct TopStoriesContentView: View {
-    // Allow view to update on new data
+	// Allow view to update on new data
 	@ObservedObject  var getData = GetStoryData()
 	
 	// Namespace required for opening animation
@@ -68,8 +68,18 @@ struct TopStoriesContentView: View {
 									NavigationLink(destination: StoryView(story: s)/*.matchedGeometryEffect(id: "storyOpen", in: matchedGeo)*/){
 										StoryRowView(story: s)
 									}//.matchedGeometryEffect(id: "storyOpen", in: matchedGeo)
+									.onAppear(){
+										if s == getData.stories.last{
+											//getData.getNextStories(int: 10)
+										}
+									}
 								}
 							}
+//							.onAppear {
+//								if (self.getData.stories.last != nil){
+//									getData.getNextStories(int: 20)
+//								}
+//							}
 						}
 					}
 				}

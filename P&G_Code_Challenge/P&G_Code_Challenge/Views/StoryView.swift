@@ -27,7 +27,7 @@ struct StoryView: View {
 	@Namespace private var matchedGeo
 	
 	// Param to format a Story
-	var story: Story
+	var story: Item
 	
 	// Card format
 	var body: some View {
@@ -77,7 +77,7 @@ struct StoryView: View {
 			}
 
 			// Create list of comments
-			List(getCommentData.comments){ comment in
+			List(Array(getCommentData.comments.values)){ comment in
 				CommentView(comment: comment)
 			}
 			.onAppear{
@@ -103,6 +103,6 @@ struct StoryView: View {
 */
 struct HackerStory_Previews: PreviewProvider {
     static var previews: some View {
-		StoryView(story: Story(id: 1, type: "story", by: "Chad", time: 1175714200, text: "Test text afdbwerfjberigerkjghnerighnerkjghergheroigheriogergiohoerihgeriohgerg", url: "www.apple.com", score: 1, title: "P&G iOS Test awdadaddad", descendants: 2))
+		StoryView(story: Item(id: 1, type: "story", by: "Chad", time: 1175714200, text: "Test text afdbwerfjberigerkjghnerighnerkjghergheroigheriogergiohoerihgeriohgerg", url: "www.apple.com", score: 1, title: "P&G iOS Test awdadaddad", descendants: 2))
     }
 }

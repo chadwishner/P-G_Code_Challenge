@@ -9,7 +9,7 @@ import SwiftUI
 */
 struct StoryRowView: View {
 	// Param to format a Story
-	var story : Story
+	var story : Item
 
 	// Card format
 	var body: some View {
@@ -65,6 +65,6 @@ struct StoryRowView: View {
 */
 struct StoryRow_Previews: PreviewProvider {
     static var previews: some View {
-		StoryRowView(story: Story(id: 1, type: "job", by: "Chad", time: 1175714200, text: "Test text", url: "www.apple.com", score: 1, title: "Test Title", descendants: 2))
+		StoryRowView(story: Item(id: 1, type: "job", by: "Chad", time: 1175714200, text: "Test text", url: "www.apple.com", score: 1, title: "Test Title", descendants: 2))
     }
 }
