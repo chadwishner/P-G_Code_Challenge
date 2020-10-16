@@ -125,21 +125,24 @@ class GetData: ObservableObject {
 	*/
 	func getNextStories(int: Int){
 		
-		// Get the next set of storyIDs that have not been loaded yet
-		let nextStoryIDs = self.topStories[self.items.count..<self.items.count + int]
-		
-		// For each story ID we get the data for it
-		for int in nextStoryIDs{
-			getItemData(id: String(int)){ (story) in
-				DispatchQueue.main.async{
-					// Add new stories to the dictionary
-					self.itemsDict[int] = story
-					
-					// Sort items array, unfortunetly this has to be done each time an item is added...
-					self.sortItemArray(parentArray: self.topStories)
+		// Get the next set of storyIDs that have not been loaded yet, check to make sure we don't have an index out of bounds
+		if (self.items.count < 500){
+			let nextStoryIDs = self.topStories[self.items.count...((self.items.count + int < 500) ? self.items.count + int : 499)]
+				
+				// For each story ID we get the data for it
+				for int in nextStoryIDs{
+					getItemData(id: String(int)){ (story) in
+						DispatchQueue.main.async{
+							// Add new stories to the dictionary
+							self.itemsDict[int] = story
+							
+							// Sort items array, unfortunetly this has to be done each time an item is added...
+							self.sortItemArray(parentArray: self.topStories)
+						}
+					}
 				}
-			}
 		}
+		
 	}
 	
 	/** Function used for getting all the comments for a given item. Works for all types of comments

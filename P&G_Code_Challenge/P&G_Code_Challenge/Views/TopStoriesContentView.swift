@@ -79,21 +79,18 @@ struct TopStoriesContentView: View {
 										NavigationLink(destination: StoryView(story: s)/*.matchedGeometryEffect(id: "storyOpen", in: matchedGeo)*/){
 											StoryRowView(story: s)
 										}//.matchedGeometryEffect(id: "storyOpen", in: matchedGeo)
-
-										// Load the next stories in topStories when we reach end of list
-//										.onAppear(){
-//											if (s == getData.items.last){
-//												//getData.getNextStories(int: 10)
-//											}
-//										}
 								}
 							}
+							
+							Text(self.getData.items.count == 500 ? "That's all 500 HN stories!" : (self.searchText.isEmpty) ? "Loading ... " : "")
+								.padding(.bottom, 10)
+							
 							// Load the next stories in topStories when we reach end of list
-//							.onAppear {
-//								if (self.getData.stories.last != nil){
-//									getData.getNextStories(int: 20)
-//								}
-//							}
+							.onAppear {
+								if (self.getData.items.last != nil){
+									getData.getNextStories(int: 10)
+								}
+							}
 						}
 					}
 				}

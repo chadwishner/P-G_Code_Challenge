@@ -3,25 +3,26 @@
 ## What is implementated?
 
  - List of top 500 Hacker News stories in a scrollable view
+ - Stories and comments display in order based on their parent's int array.
  - Tapping a story opens a view with more information on the story including comments
  - If the story has a link, a safari icon is shown that can be tapped to open a SafariWebView of the link. This works in both the TopStoriesContentView as well as the StoryView
  - Search bar for story titles
  - HTML markers have been removed from text for Stories and Comments are in plain HTML. Upon further inspection of comments, it may be a good idea to create a custom view that interprets the HTML in order to maintain HTML formatting.
  - Necessary text changes color dynamically based on system color (light:dark)
- - Sub-comments show; however, I am still working on trying to make more space for them to view, this way they aren't always in a scroll list.
+ - Sub-comments show; however, I am still working on trying to make more space for them to view, this way they aren't always in a scroll list. Current UI makes it hard to see sub-sub-comments.
  - SwiftUI was used so the application is compatible with iOS13+
 
 ## Areas for improvement
 
  - I am running into issues trying to figure out how to add animations to the app. I am attempting to add a .matchedGeometryEffect for the transition to/from a StoryRowView and a StoryView.
- - Currently the Network classes do not add Stories or Comments into their arrays in order they are sent, this causes out of order issues.
  - I attempted to add a "pull down to refresh" feature to the app, but all available libraries were either out of date or seem to be very laggy and hurt the usability of the app more then it helped.
  - When API calls fail, I have no process to retry for that information.
 
 ## Current Issues/Needs more testing
-- When the a lot of stories are loaded into the TopStoriesContentView, the scroll becomes very laggy. With more time I would 
+- When the a lot of stories are loaded into the TopStoriesContentView, the scroll becomes very laggy. With more time I would research effiency of UI elements or attempt to de-render stories at the top of the view.
 - When opening a story, the comment processing can be very slow and due to the recursion required for sub somments sometimes the user needs to wait an extended period of time. If I am able to figure out the animations, I will add a loading animation.
 - I am confident that the data for each story's comments are encapsulated in each view, but more automated testing should be done in order to ensure data is not corrupted.
+- I am confident that data is sorted correctly, but more automated testing should be done to ensure this.
 
 ## Files
 
@@ -29,7 +30,7 @@ This is a brief overview of the most important files and their usage
 
 ### Views/TopStoriesContentView.swift
 
-This represents to landing/home page for the app. Cards are displayed in a ScrollView and a LazyVStack in order to keep formatting minimal. A LazyVStack was used to avoid unnecessary rendering; however, more research should be done on the performance between this option and a List.
+This represents to landing/home page for the app. Cards are displayed in a ScrollView and a LazyVStack in order to keep formatting minimal. A LazyVStack was used to avoid unnecessary rendering; however, more research should be done on the performance between this option and a List. When the user reaches the bottom of the list, the view asks for 10 more stories to be added. A textView of "Loading..." shows at the bottom.
 
 ### Views/StoryRowView.swift
 
