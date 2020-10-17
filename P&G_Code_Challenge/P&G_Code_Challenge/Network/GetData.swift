@@ -21,10 +21,10 @@ class GetData: ObservableObject {
 	
 	// Dictionary containing all values, ID to Item, this allows quicker lookup of ID for checking duplicates
 	// Unless there is some trick with arrays that allows you to find if an element exists based on Item.ID
-	var itemsDict = [Int: Item]()
+	private var itemsDict = [Int: Item]()
 	
 	// Local variable for 500 Top Stories
-	var topStories = [Int]()
+	private var topStories = [Int]()
 	
 	/** When app first starts, TopSotriesContentView will initialize this.
 	Bool is so that this is custom initializer is only called by this view.
@@ -53,7 +53,7 @@ class GetData: ObservableObject {
 	
 	/** This is a network function that calls for the top 500 Hacker News stories
 	*/
-	func getTopStories(completion:@escaping ([Int]) -> Void){
+	private func getTopStories(completion:@escaping ([Int]) -> Void){
 		// Build URL and make api call
 		let url = NSURL(string: "https://hacker-news.firebaseio.com/v0/topstories.json?print=pretty")
 		URLSession.shared.dataTask(with: url! as URL) { (data, response, error) in
@@ -90,7 +90,7 @@ class GetData: ObservableObject {
 
 	/** Netowrk function to get the details of all item types
 	*/
-	func getItemData(id: String, completion:@escaping (Item?) -> Void){
+	private func getItemData(id: String, completion:@escaping (Item?) -> Void){
 		// Build URL and make api call
 
 		let url = NSURL(string: "https://hacker-news.firebaseio.com/v0/item/" + id + ".json?print=pretty")
