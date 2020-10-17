@@ -30,7 +30,6 @@ struct StoryView: View {
 			HStack(alignment: .top) {
 				// If a url exists allow users to click on image to open webView when available
 				if (story.url != nil){
-					//NavigationLink(destination: WebView(url: story.url!).padding(.top, -50)){
 					Link(destination: URL(string: story.url!)!){
 						Image("link")
 							.resizable()
