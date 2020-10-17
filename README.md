@@ -1,12 +1,13 @@
-# P&G Alchemy iOS Code Test
+# P&G Alchemy iOS Code Test - Pull to Refresh
 
 ## What is implementated?
 
  - List of top 500 Hacker News stories in a scrollable view
  - Stories and comments display in order based on their parent's int array.
  - Tapping a story opens a view with more information on the story including comments
- - If the story has a link, a safari icon is shown that can be tapped to open a SafariWebView of the link. This works when you are in the StoryView, a limitation of needing to use 
- - Search bar for story titles
+ - If the story has a link, a safari icon is shown that can be tapped to open a SafariWebView of the link. This works when you are in the StoryView, a limitation of needing to use a list to implement the pull to refresh.
+ - Search bar for story titles.
+ - Pull to refresh inabled using a cocoapod
  - HTML markers have been removed from text for Stories and Comments are in plain HTML. Upon further inspection of comments, it may be a good idea to create a custom view that interprets the HTML in order to maintain HTML formatting.
  - Necessary text changes color dynamically based on system color (light:dark)
  - Sub-comments show; however, I am still working on trying to make more space for them to view, this way they aren't always in a scroll list. Current UI makes it hard to see sub-sub-comments.
@@ -15,11 +16,12 @@
 ## Areas for improvement
 
  - I am running into issues trying to figure out how to add animations to the app. I am attempting to add a .matchedGeometryEffect for the transition to/from a StoryRowView and a StoryView.
- - I attempted to add a "pull down to refresh" feature to the app, but all available libraries were either out of date or seem to be very laggy and hurt the usability of the app more then it helped.
+ - Comments and sub-comments displey but could be formatted a little nicer.
  - When API calls fail, I have no process to retry for that information.
 
 ## Current Issues/Needs more testing
-- When the a lot of stories are loaded into the TopStoriesContentView, the scroll becomes very laggy. With more time I would research effiency of UI elements or attempt to de-render stories at the top of the view.
+
+- When the a lot of stories are loaded into the TopStoriesContentView, the scroll becomes very laggy. It is my understanding that Lists automatically de-render itesm; however, with more time I would research effiency of UI elements or attempt to de-render stories at the top of the view.
 - When opening a story, the comment processing can be very slow and due to the recursion required for sub somments sometimes the user needs to wait an extended period of time. If I am able to figure out the animations, I will add a loading animation.
 - I am confident that the data for each story's comments are encapsulated in each view, but more automated testing should be done in order to ensure data is not corrupted.
 - I am confident that data is sorted correctly, but more automated testing should be done to ensure this.
@@ -48,7 +50,7 @@ This file contains all functions to get the 500 top stories from Hacker News as 
 This boolean is used in order to automatically gather the top 500 hacker stories and the details on 20 stories. This is set to false when StoryView and CommentView are used to instantiate so there are no unnecessary API calls.
 
 **refresh()**
-This function is intended for use of a pull down refresh bar. Function is commented out as I have not found a suitable library for a pull down refresh.
+This function is intended for use of a pull down refresh bar. Resets all data and launches **getTopStories()**
 
 **getTopStories() -> [Int]**
 
@@ -67,6 +69,10 @@ This function loops through all children in the kids array and calls **getItemDe
 
 **sortItemArray(parentArray: [int])**
 This function creates a published **Item** array that is sorted based on the incoming parent array. The parent array is any array that has the ordered list of IDs that correspond to the **Items** in the unorderd dictionary. For example: the parent array for a dictionary containing stories is the topStories array (500 top Hacker News Stories), the parent array for a dictionary of comments is the parent's Story.kids array.
+
+### Network/Extensions.swift
+
+This is just an extension file in order to format dates.
 
 ### Models/Story.swift
 

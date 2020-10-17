@@ -54,7 +54,7 @@ struct StoryView: View {
 					
 					// Show details about story including how long ago it was posted
 					HStack {
-						Text(String(story.score!) + " points by " + story.by)
+						Text(String(story.score!) + " points by " + story.by!)
 							.font(.system(size: 10, weight: .bold, design: .default))
 							.foregroundColor(.white)
 							.padding(.top, 0.5)
@@ -100,7 +100,10 @@ struct StoryView: View {
 		
 		// Load comment data when the view appears
 		.onAppear{
-			getData.getAllComments(item: self.story)
+			// Check to see if we have already done the loading (although this doesn't seem to be working as intended)
+			if(!getData.hasLoaded && !getData.loading) {
+				getData.getAllComments(item: self.story)
+			}
 		}
     }
 }

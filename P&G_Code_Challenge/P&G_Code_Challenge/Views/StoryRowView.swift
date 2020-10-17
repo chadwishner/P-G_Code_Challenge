@@ -39,7 +39,7 @@ struct StoryRowView: View {
 				
 				// Show details about story including how long ago it was posted
 				HStack {
-					Text(String(story.score!) + " points by " + story.by)
+					Text(String(story.score!) + " points by " + story.by!)
 						.font(.system(size: 10, weight: .bold, design: .default))
 						.foregroundColor(colorScheme != .dark ? Color.black : Color.white)
 						.padding(.top, 2)

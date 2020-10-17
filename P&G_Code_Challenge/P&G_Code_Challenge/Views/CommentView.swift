@@ -26,7 +26,7 @@ struct CommentView: View {
 				.foregroundColor(colorScheme != .dark ? Color.black : Color.white)
 				.padding(.horizontal, 13.0)
 			HStack{
-				Text(comment.by)
+				Text(comment.by!)
 					.font(.system(size: 10, weight: .bold, design: .default))
 					.foregroundColor(.gray)
 				Text("- " + comment.date.dateAsString())
@@ -48,7 +48,10 @@ struct CommentView: View {
 		}
 		// Retrieve all sub-comments
 		.onAppear{
-			getData.getAllComments(item: self.comment)
+			// Check to see if we have already done the loading (although this doesn't seem to be working as intended)
+			if(!getData.hasLoaded && !getData.loading) {
+				getData.getAllComments(item: self.comment)
+			}
 		}
     }
 }

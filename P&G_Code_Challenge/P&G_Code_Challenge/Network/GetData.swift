@@ -13,6 +13,9 @@ class GetData: ObservableObject {
 	// Loading variable used for loading animation on TopStoriesContentView
 	@Published var loading = false
 	
+	// Loading variabled to make sure we don't make unnecessary function calls with .onAppear()
+	@Published var hasLoaded = false
+	
 	// Published sorted array of Items
 	@Published var items = [Item]()
 	
@@ -87,7 +90,7 @@ class GetData: ObservableObject {
 
 	/** Netowrk function to get the details of all item types
 	*/
-	func getItemData(id: String, completion:@escaping (Item) -> Void){
+	func getItemData(id: String, completion:@escaping (Item?) -> Void){
 		// Build URL and make api call
 
 		let url = NSURL(string: "https://hacker-news.firebaseio.com/v0/item/" + id + ".json?print=pretty")
@@ -103,8 +106,15 @@ class GetData: ObservableObject {
 			guard let data = data else {return}
 			
 			do {
+				
 				// Decode JSON into an item instance
 				var item = try JSONDecoder().decode(Item.self, from: data)
+				
+				// Check if the item is deleted, then lets not do unnecessary things
+				if(item.deleted ?? false) {
+					completion(nil)
+					return
+				}
 				
 				// Add date to Item
 				item.date = Date(timeIntervalSince1970: Double(item.time))
@@ -133,24 +143,54 @@ class GetData: ObservableObject {
 	*/
 	func getNextStories(int: Int){
 		
-		// Get the next set of storyIDs that have not been loaded yet, check to make sure we don't have an index out of bounds
+		// Check if we got all stories already
 		if (self.items.count < 500){
+			// Get the next set of storyIDs that have not been loaded yet, check to make sure we don't have an index out of bounds
 			let nextStoryIDs = self.topStories[self.items.count...((self.items.count + int < 500) ? self.items.count + int : 499)]
+			
+			// Create group to synchronize tasks for sorting
+			let storiesGroup = DispatchGroup()
+			
+			// Create queue to manage tasks serially
+			let dispatchQueue = DispatchQueue(label: "storiesDispatchQueue")
+			
+			// Create semaphore to control resource access
+			let dispatchSemaphore = DispatchSemaphore(value: 0)
+			
+			// Create a temp array that will be the new sorted array of comments
+			var tempItems = self.items
+				
+			// Start Queue
+			dispatchQueue.async {
 				
 				// For each story ID we get the data for it
 				for int in nextStoryIDs{
-					getItemData(id: String(int)){ (story) in
-						DispatchQueue.main.async{
-							// Add new stories to the dictionary
-							self.itemsDict[int] = story
-							
-							// Sort items array, unfortunetly this has to be done each time an item is added...
-							self.sortItemArray(parentArray: self.topStories)
+					
+					// Enter group
+					storiesGroup.enter()
+					
+					// Get story data and add to dictionary (needed for duplicates) and temp array (sorted array)
+					self.getItemData(id: String(int)){ (story) in
+						
+						if story != nil {
+							self.itemsDict[int] = (story!)
+							tempItems.append(story!)
 						}
+						
+						// Leave group and increment semaphore
+						dispatchSemaphore.signal()
+						storiesGroup.leave()
 					}
+					dispatchSemaphore.wait()
 				}
+			}
+			// Notify that all group tasks are finished
+			storiesGroup.notify(queue: dispatchQueue) {
+				DispatchQueue.main.async {
+					self.items = tempItems
+				}
+			}
 		}
-		
 	}
 	
 	/** Function used for getting all the comments for a given item. Works for all types of comments
@@ -158,43 +198,67 @@ class GetData: ObservableObject {
 	*/
 	func getAllComments(item: Item){
 		
+		// Set loading to that way we don't get race conditions
+		self.loading = true
+		
 		// If children exist we want to loop through each kid and get the data
 		if (item.kids != nil) {
-			for kid in item.kids! {
-				
-				// Want to doublecheck that we are not getting duplicates, this could happen if a user leaves a view and returns hack to it
-				if !itemsDict.keys.contains(kid){
-					getItemData(id: String(kid)) { (newComment) in
-						DispatchQueue.main.async{
+			
+			// Create group to synchronize tasks for sorting
+			let commentsGroup = DispatchGroup()
+			
+			// Create queue to manage tasks serially
+			let dispatchQueue = DispatchQueue(label: "commentsDispatchQueue")
+			
+			// Create semaphore to control resource access
+			let dispatchSemaphore = DispatchSemaphore(value: 0)
+			
+			// Create a temp array that will be the new sorted array of comments
+			var tempItems =  [Item]()
+			
+			// Start Queue
+			dispatchQueue.async {
+			
+				// Get Comment for each kid of parent
+				for kid in item.kids! {
+					
+					// Want to doublecheck that we are not getting duplicates, this could happen if a user leaves a view and returns hack to it
+					if !self.itemsDict.keys.contains(kid){
+						
+						// Enter group
+						commentsGroup.enter()
+		
+						// Get comment data and add to dictionary (needed for duplicates) and temp array (sorted array)
+						self.getItemData(id: String(kid)) { (newComment) in
 							
-							// Add new comments to the dictionary
-							self.itemsDict[kid] = (newComment)
+							if(newComment != nil) {
+								self.itemsDict[kid] = (newComment!)
+								tempItems.append(newComment!)
+							}
 							
-							// Sort items array, unfortunetly this has to be done each time an item is added...
-							self.sortItemArray(parentArray: item.kids!)
+							// Leave group and increment semaphore
+							dispatchSemaphore.signal()
+							commentsGroup.leave()
 						}
+						dispatchSemaphore.wait()
 					}
 				}
 			}
+			// Notify that all group tasks are finished
+			commentsGroup.notify(queue: dispatchQueue) {
+				DispatchQueue.main.async {
+					
+					// Add new items and set bools
+					self.items.append(contentsOf: tempItems)
+					self.loading = false
+					self.hasLoaded = true
+				}
+			}
 		}
-	}
-	
-	/** Sorting function to provide a sorted array of Items based on a parent array
-	The parent array is whatever array stores the sorted IDs of the non-sorted set. For stories this is the topStories array, for comments it is the Story.kids array
-	*/
-	func sortItemArray(parentArray: [Int]){
-		
-		// Set loading to true so we can display loading animation
-		loading = true
-		
-		// Sort and add to array
-		self.items = Array(self.itemsDict.values).sorted{
+		else {
+			// If no kids exist we still want to set bool
+			self.hasLoaded = true
 			
-			// Compare the index that the item's ID exists in the parent array
-			return parentArray.firstIndex(of: $0.id)! < parentArray.firstIndex(of: $1.id)!
 		}
-		
-		// Set loading to false so we can hide loading animation
-		loading = false
 	}
 }
