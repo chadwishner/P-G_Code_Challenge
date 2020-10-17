@@ -51,8 +51,14 @@ struct StoryView: View {
 						.foregroundColor(.white)
 						.padding([.top, .trailing], 10)
 						.fixedSize(horizontal: false, vertical: true)
+					
+					// Show details about story including how long ago it was posted
 					HStack {
 						Text(String(story.score!) + " points by " + story.by)
+							.font(.system(size: 10, weight: .bold, design: .default))
+							.foregroundColor(.white)
+							.padding(.top, 0.5)
+						Text("- " + story.date.dateAsString())
 							.font(.system(size: 10, weight: .bold, design: .default))
 							.foregroundColor(.white)
 							.padding(.top, 0.5)

@@ -36,7 +36,7 @@ class GetData: ObservableObject {
 	
 	/** Function for refreshing TopStoriesContentView
 	*/
-	func refresh(){
+	func refresh(completion:@escaping () -> Void){
 		// Erase all data
 		items = [Item]()
 		itemsDict = [Int: Item]()
@@ -44,6 +44,7 @@ class GetData: ObservableObject {
 		
 		// Call getTopStories
 		getTopStories { (topStories) in
+			completion()
 		}
 	}
 	
@@ -104,6 +105,9 @@ class GetData: ObservableObject {
 			do {
 				// Decode JSON into an item instance
 				var item = try JSONDecoder().decode(Item.self, from: data)
+				
+				// Add date to Item
+				item.date = Date(timeIntervalSince1970: Double(item.time))
 				
 				// If the item contains text we need to remove the HTML characters
 				if item.text != nil {

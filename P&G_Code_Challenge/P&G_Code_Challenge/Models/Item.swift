@@ -24,5 +24,6 @@ struct Item: Decodable, Identifiable, Hashable {
 	var title: String?
 	var parts: [Int]?
 	var descendants: Int?
+	var date: Date!
 	
 }

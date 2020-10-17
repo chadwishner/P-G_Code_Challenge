@@ -36,10 +36,18 @@ struct StoryRowView: View {
 				Text((story.url != nil) ? "link" : story.type)
 					.font(.system(size: 8, weight: .bold, design: .default))
 					.foregroundColor(.gray)
+				
+				// Show details about story including how long ago it was posted
 				HStack {
 					Text(String(story.score!) + " points by " + story.by)
 						.font(.system(size: 10, weight: .bold, design: .default))
 						.foregroundColor(colorScheme != .dark ? Color.black : Color.white)
+						.padding(.top, 2)
+						.padding(.bottom, 10)
+					Text("- " + story.date.timeAgoDisplay())
+						.font(.system(size: 10, weight: .bold, design: .default))
+						.foregroundColor(colorScheme != .dark ? Color.black : Color.white)
+						.padding(.leading, -3)
 						.padding(.top, 2)
 						.padding(.bottom, 10)
 				}

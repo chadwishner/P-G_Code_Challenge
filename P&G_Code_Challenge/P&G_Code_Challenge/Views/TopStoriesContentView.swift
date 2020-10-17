@@ -84,6 +84,7 @@ struct TopStoriesContentView: View {
 						}
 						.listRowBackground(Color.clear)
 						
+						// Bottom text to load more stories
 						Text(self.getData.items.count == 500 ? "That's all 500 HN stories!" : (self.searchText.isEmpty) ? "Loading ... " : "")
 							.padding(.bottom, 10)
 							.frame(maxWidth: .infinity, alignment: .center)
@@ -95,14 +96,17 @@ struct TopStoriesContentView: View {
 								}
 							}
 					}
+					// Pull down to refresh library
 					.pullToRefresh(isShowing: $isShowing) {
-						getData.refresh()
-						DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-							self.isShowing = false
+						getData.refresh() {
+							DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+								self.isShowing = false
+							}
 						}
 					}
 				}
 			}
+			// Weird padding issue I needed in order to get rid of blank space on sides of list
 			.padding(-20.0)
 			.navigationBarTitle(Text("Hacker News"))
 		}

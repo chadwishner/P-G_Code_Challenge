@@ -6,6 +6,7 @@
 import SwiftUI
 
 /** Search Bar view
+Search bar looks a little strange on the list version of the UI, more work should be done for coloring
 */
 struct SearchBar: View {
 	@Binding var text: String

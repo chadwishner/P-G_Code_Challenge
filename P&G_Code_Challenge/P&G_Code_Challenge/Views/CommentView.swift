@@ -25,10 +25,16 @@ struct CommentView: View {
 				// Dynamic color changing based on system color
 				.foregroundColor(colorScheme != .dark ? Color.black : Color.white)
 				.padding(.horizontal, 13.0)
-			Text(comment.by)
-				.font(.system(size: 10, weight: .bold, design: .default))
-				.foregroundColor(.gray)
-				.padding([.horizontal, .bottom], 10.0)
+			HStack{
+				Text(comment.by)
+					.font(.system(size: 10, weight: .bold, design: .default))
+					.foregroundColor(.gray)
+				Text("- " + comment.date.dateAsString())
+					.font(.system(size: 10, weight: .bold, design: .default))
+					.foregroundColor(.gray)
+			}
+			.padding([.horizontal, .bottom], 10.0)
+			
 			// Get Sub-Comments if available
 			if (comment.kids != nil) {
 				ForEach(getData.items.filter{
