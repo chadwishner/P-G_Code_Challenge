@@ -5,11 +5,11 @@
  - List of top 500 Hacker News stories in a scrollable view
  - Stories and comments display in order based on their parent's int array.
  - Tapping a story opens a view with more information on the story including comments
- - If the story has a link, a safari icon is shown that can be tapped to open a SafariWebView of the link. This works in both the TopStoriesContentView as well as the StoryView
+ - If the story has a link, a safari icon is shown that can be tapped to open Safari to the link. This works in both the TopStoriesContentView as well as the StoryView
  - Search bar for story titles
  - HTML markers have been removed from text for Stories and Comments are in plain HTML. Upon further inspection of comments, it may be a good idea to create a custom view that interprets the HTML in order to maintain HTML formatting.
  - Necessary text changes color dynamically based on system color (light:dark)
- - Sub-comments show; however, I am still working on trying to make more space for them to view, this way they aren't always in a scroll list. Current UI makes it hard to see sub-sub-comments.
+ - Sub-comments show.
  - SwiftUI was used so the application is compatible with iOS13+
 
 ## Areas for improvement
@@ -23,6 +23,7 @@
 - When opening a story, the comment processing can be very slow and due to the recursion required for sub somments sometimes the user needs to wait an extended period of time. If I am able to figure out the animations, I will add a loading animation.
 - I am confident that the data for each story's comments are encapsulated in each view, but more automated testing should be done in order to ensure data is not corrupted.
 - I am confident that data is sorted correctly, but more automated testing should be done to ensure this.
+- There are some unnecessary function calls that I am trying to get rid of from the view side, but I am unable to solve at the moment. This should not effect usability or features.
 
 ## Files
 
@@ -56,7 +57,7 @@ Current implementation uses a URLSession to call */topstories.json* and builds a
 
 **getItemData(id: String) -> Story**
 
-Current implementation uses a URLSession to call */item/[ID].json* and uses a JSONDecoder to decode the response into the **Item** struct. This function also removes HTML from the text field.  An *Item* is returned.
+Current implementation uses a URLSession to call */item/[ID].json* and uses a JSONDecoder to decode the response into the **Item** struct. This function also removes HTML from the text field, and adds a Date to the data.  An *Item* is returned.
 
 **getNextStories(int: Int)**
 
