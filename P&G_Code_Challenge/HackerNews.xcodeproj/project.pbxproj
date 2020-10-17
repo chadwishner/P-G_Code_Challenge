@@ -42,16 +42,16 @@
 
 /* Begin PBXFileReference section */
 		67287098253919330091258A /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
-		6729B9E4253506D300565312 /* P&G_Code_Challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "P&G_Code_Challenge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6729B9E4253506D300565312 /* HackerNews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HackerNews.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6729B9E7253506D300565312 /* P_G_Code_ChallengeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = P_G_Code_ChallengeApp.swift; sourceTree = "<group>"; };
 		6729B9E9253506D300565312 /* TopStoriesContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopStoriesContentView.swift; sourceTree = "<group>"; };
 		6729B9EB253506D700565312 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6729B9EE253506D700565312 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		6729B9F0253506D700565312 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6729B9F5253506D700565312 /* P&G_Code_ChallengeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "P&G_Code_ChallengeTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6729B9F5253506D700565312 /* HackerNewsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HackerNewsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6729B9F9253506D700565312 /* P_G_Code_ChallengeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = P_G_Code_ChallengeTests.swift; sourceTree = "<group>"; };
 		6729B9FB253506D700565312 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6729BA00253506D700565312 /* P&G_Code_ChallengeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "P&G_Code_ChallengeUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6729BA00253506D700565312 /* HackerNewsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HackerNewsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6729BA04253506D700565312 /* P_G_Code_ChallengeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = P_G_Code_ChallengeUITests.swift; sourceTree = "<group>"; };
 		6729BA06253506D700565312 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6729BA1825350A0B00565312 /* StoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryView.swift; sourceTree = "<group>"; };
@@ -101,9 +101,9 @@
 		6729B9E5253506D300565312 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				6729B9E4253506D300565312 /* P&G_Code_Challenge.app */,
-				6729B9F5253506D700565312 /* P&G_Code_ChallengeTests.xctest */,
-				6729BA00253506D700565312 /* P&G_Code_ChallengeUITests.xctest */,
+				6729B9E4253506D300565312 /* HackerNews.app */,
+				6729B9F5253506D700565312 /* HackerNewsTests.xctest */,
+				6729BA00253506D700565312 /* HackerNewsUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -180,9 +180,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		6729B9E3253506D300565312 /* P&G_Code_Challenge */ = {
+		6729B9E3253506D300565312 /* HackerNews */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6729BA09253506D700565312 /* Build configuration list for PBXNativeTarget "P&G_Code_Challenge" */;
+			buildConfigurationList = 6729BA09253506D700565312 /* Build configuration list for PBXNativeTarget "HackerNews" */;
 			buildPhases = (
 				6729B9E0253506D300565312 /* Sources */,
 				6729B9E1253506D300565312 /* Frameworks */,
@@ -192,17 +192,17 @@
 			);
 			dependencies = (
 			);
-			name = "P&G_Code_Challenge";
+			name = HackerNews;
 			packageProductDependencies = (
 				672870A12539D6A20091258A /* SwiftUIPullToRefresh */,
 			);
 			productName = "P&G_Code_Challenge";
-			productReference = 6729B9E4253506D300565312 /* P&G_Code_Challenge.app */;
+			productReference = 6729B9E4253506D300565312 /* HackerNews.app */;
 			productType = "com.apple.product-type.application";
 		};
-		6729B9F4253506D700565312 /* P&G_Code_ChallengeTests */ = {
+		6729B9F4253506D700565312 /* HackerNewsTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6729BA0C253506D700565312 /* Build configuration list for PBXNativeTarget "P&G_Code_ChallengeTests" */;
+			buildConfigurationList = 6729BA0C253506D700565312 /* Build configuration list for PBXNativeTarget "HackerNewsTests" */;
 			buildPhases = (
 				6729B9F1253506D700565312 /* Sources */,
 				6729B9F2253506D700565312 /* Frameworks */,
@@ -213,14 +213,14 @@
 			dependencies = (
 				6729B9F7253506D700565312 /* PBXTargetDependency */,
 			);
-			name = "P&G_Code_ChallengeTests";
+			name = HackerNewsTests;
 			productName = "P&G_Code_ChallengeTests";
-			productReference = 6729B9F5253506D700565312 /* P&G_Code_ChallengeTests.xctest */;
+			productReference = 6729B9F5253506D700565312 /* HackerNewsTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		6729B9FF253506D700565312 /* P&G_Code_ChallengeUITests */ = {
+		6729B9FF253506D700565312 /* HackerNewsUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6729BA0F253506D700565312 /* Build configuration list for PBXNativeTarget "P&G_Code_ChallengeUITests" */;
+			buildConfigurationList = 6729BA0F253506D700565312 /* Build configuration list for PBXNativeTarget "HackerNewsUITests" */;
 			buildPhases = (
 				6729B9FC253506D700565312 /* Sources */,
 				6729B9FD253506D700565312 /* Frameworks */,
@@ -231,9 +231,9 @@
 			dependencies = (
 				6729BA02253506D700565312 /* PBXTargetDependency */,
 			);
-			name = "P&G_Code_ChallengeUITests";
+			name = HackerNewsUITests;
 			productName = "P&G_Code_ChallengeUITests";
-			productReference = 6729BA00253506D700565312 /* P&G_Code_ChallengeUITests.xctest */;
+			productReference = 6729BA00253506D700565312 /* HackerNewsUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -258,7 +258,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 6729B9DF253506D300565312 /* Build configuration list for PBXProject "P&G_Code_Challenge" */;
+			buildConfigurationList = 6729B9DF253506D300565312 /* Build configuration list for PBXProject "HackerNews" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -274,9 +274,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				6729B9E3253506D300565312 /* P&G_Code_Challenge */,
-				6729B9F4253506D700565312 /* P&G_Code_ChallengeTests */,
-				6729B9FF253506D700565312 /* P&G_Code_ChallengeUITests */,
+				6729B9E3253506D300565312 /* HackerNews */,
+				6729B9F4253506D700565312 /* HackerNewsTests */,
+				6729B9FF253506D700565312 /* HackerNewsUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -345,12 +345,12 @@
 /* Begin PBXTargetDependency section */
 		6729B9F7253506D700565312 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 6729B9E3253506D300565312 /* P&G_Code_Challenge */;
+			target = 6729B9E3253506D300565312 /* HackerNews */;
 			targetProxy = 6729B9F6253506D700565312 /* PBXContainerItemProxy */;
 		};
 		6729BA02253506D700565312 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 6729B9E3253506D300565312 /* P&G_Code_Challenge */;
+			target = 6729B9E3253506D300565312 /* HackerNews */;
 			targetProxy = 6729BA01253506D700565312 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -533,7 +533,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/P&G_Code_Challenge.app/P&G_Code_Challenge";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HackerNews.app/HackerNews";
 			};
 			name = Debug;
 		};
@@ -554,7 +554,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/P&G_Code_Challenge.app/P&G_Code_Challenge";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HackerNews.app/HackerNews";
 			};
 			name = Release;
 		};
@@ -599,7 +599,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		6729B9DF253506D300565312 /* Build configuration list for PBXProject "P&G_Code_Challenge" */ = {
+		6729B9DF253506D300565312 /* Build configuration list for PBXProject "HackerNews" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6729BA07253506D700565312 /* Debug */,
@@ -608,7 +608,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6729BA09253506D700565312 /* Build configuration list for PBXNativeTarget "P&G_Code_Challenge" */ = {
+		6729BA09253506D700565312 /* Build configuration list for PBXNativeTarget "HackerNews" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6729BA0A253506D700565312 /* Debug */,
@@ -617,7 +617,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6729BA0C253506D700565312 /* Build configuration list for PBXNativeTarget "P&G_Code_ChallengeTests" */ = {
+		6729BA0C253506D700565312 /* Build configuration list for PBXNativeTarget "HackerNewsTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6729BA0D253506D700565312 /* Debug */,
@@ -626,7 +626,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6729BA0F253506D700565312 /* Build configuration list for PBXNativeTarget "P&G_Code_ChallengeUITests" */ = {
+		6729BA0F253506D700565312 /* Build configuration list for PBXNativeTarget "HackerNewsUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6729BA10253506D700565312 /* Debug */,
