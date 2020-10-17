@@ -19,7 +19,6 @@
 		6729BA1E25350A9E00565312 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6729BA1D25350A9E00565312 /* Item.swift */; };
 		6729BA232535131F00565312 /* GetData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6729BA222535131F00565312 /* GetData.swift */; };
 		673727D925375B6100572C89 /* CommentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 673727D825375B6100572C89 /* CommentView.swift */; };
-		673727DE25389C5500572C89 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 673727DD25389C5500572C89 /* WebView.swift */; };
 		678D3C702536612A0006D495 /* StoryRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 678D3C6F2536612A0006D495 /* StoryRowView.swift */; };
 /* End PBXBuildFile section */
 
@@ -58,7 +57,6 @@
 		6729BA1D25350A9E00565312 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		6729BA222535131F00565312 /* GetData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetData.swift; sourceTree = "<group>"; };
 		673727D825375B6100572C89 /* CommentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentView.swift; sourceTree = "<group>"; };
-		673727DD25389C5500572C89 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		678D3C6F2536612A0006D495 /* StoryRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryRowView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -171,7 +169,6 @@
 				678D3C6F2536612A0006D495 /* StoryRowView.swift */,
 				6729BA1825350A0B00565312 /* StoryView.swift */,
 				673727D825375B6100572C89 /* CommentView.swift */,
-				673727DD25389C5500572C89 /* WebView.swift */,
 				67287098253919330091258A /* SearchBar.swift */,
 			);
 			path = Views;
@@ -315,7 +312,6 @@
 				6729BA1925350A0B00565312 /* StoryView.swift in Sources */,
 				6729B9EA253506D300565312 /* TopStoriesContentView.swift in Sources */,
 				673727D925375B6100572C89 /* CommentView.swift in Sources */,
-				673727DE25389C5500572C89 /* WebView.swift in Sources */,
 				6729BA232535131F00565312 /* GetData.swift in Sources */,
 				6729B9E8253506D300565312 /* P_G_Code_ChallengeApp.swift in Sources */,
 				678D3C702536612A0006D495 /* StoryRowView.swift in Sources */,
