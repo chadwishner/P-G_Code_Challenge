@@ -24,7 +24,7 @@ struct StoryRowView: View {
 				.aspectRatio(contentMode: .fit)
 				.frame(width: 50, height: 50)
 				.padding(.all, 20)
-					
+
 			VStack(alignment: .leading) {
 				Text(story.title!)
 					.font(.system(size: 15, weight: .bold, design: .default))

@@ -30,7 +30,8 @@ struct StoryView: View {
 			HStack(alignment: .top) {
 				// If a url exists allow users to click on image to open webView when available
 				if (story.url != nil){
-					NavigationLink(destination: WebView(url: story.url!)){
+					//NavigationLink(destination: WebView(url: story.url!).padding(.top, -50)){
+					Link(destination: URL(string: story.url!)!){
 						Image("link")
 							.resizable()
 							.aspectRatio(contentMode: .fit)
@@ -88,7 +89,8 @@ struct StoryView: View {
 		.background(Color(red: 32/255, green: 36/255, blue: 38/255))
 		.cornerRadius(20)
 		.shadow(color: Color.black.opacity(0.2), radius: 20, x: 0, y: 0)
-		.padding(.all, 10)
+		.padding([.horizontal, .bottom], 10)
+		.padding(.top, -50)
 //		.matchedGeometryEffect(id: "storyOpen", in: matchedGeo)
 		
 		// Load comment data when the view appears
