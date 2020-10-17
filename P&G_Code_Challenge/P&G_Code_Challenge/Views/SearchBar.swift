@@ -11,6 +11,9 @@ struct SearchBar: View {
 	@Binding var text: String
 
 	@State private var isEditing = false
+	
+	// This is to switch text color based on system color (light:dark)
+	@Environment(\.colorScheme) var colorScheme
 		
 	var body: some View {
 		HStack {
@@ -18,7 +21,8 @@ struct SearchBar: View {
 			TextField("Search", text: $text)
 				.padding(7)
 				.padding(.horizontal, 25)
-				.background(Color(.systemGray6))
+				.background(Color(colorScheme == .dark ? .white : .systemGray6))
+				.foregroundColor(colorScheme == .dark ? .black : .white)
 				.cornerRadius(8)
 				.autocapitalization(/*@START_MENU_TOKEN@*/.none/*@END_MENU_TOKEN@*/)
 				.overlay(
@@ -53,7 +57,6 @@ struct SearchBar: View {
 				}
 			
 		}
-		.background(Color.clear)
 	}
 }
 

@@ -28,15 +28,15 @@ struct CommentView: View {
 			Text(comment.by)
 				.font(.system(size: 10, weight: .bold, design: .default))
 				.foregroundColor(.gray)
-				.padding(.horizontal, 10.0)
+				.padding([.horizontal, .bottom], 10.0)
 			// Get Sub-Comments if available
 			if (comment.kids != nil) {
-				List(getData.items.filter{
+				ForEach(getData.items.filter{
 					// Make sure we only display comments
 					$0.type == "comment" ? true : false
 			 }){ comment in
-					CommentView(comment: comment)//.fixedSize(horizontal: false, vertical: true)
-						.frame(maxHeight: .infinity)
+					CommentView(comment: comment)
+						.padding(.leading, 20.0)
 				}
 			}
 		}

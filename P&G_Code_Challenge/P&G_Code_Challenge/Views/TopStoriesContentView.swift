@@ -56,63 +56,54 @@ struct TopStoriesContentView: View {
 						swap(&self.leftOffset, &self.rightOffset)
 					}
 				} else {
-					// ScrollView and LazyVStack used in order to avoid visual attributes of a List
-					//ScrollView{
+					List{
 						// SearchBar for searching titles
-						//SearchBar(text: $searchText)
+						SearchBar(text: $searchText)
 						
-						List{
-							// SearchBar for searching titles
-							SearchBar(text: $searchText)
-							
-							ForEach(getData.items.filter{
-								// Filter checks if items are not comments
-								if($0.type != "comment"){
-									// Filter checks if search bar is empty, then checks if the Story is not nil, then evaluates .contain
-									if (self.searchText.isEmpty){
-										return true
-									} else if ($0.title != nil){
-										return $0.title!.lowercased().contains(self.searchText)
-									} else {
-										return true
-									}
+						ForEach(getData.items.filter{
+							// Filter checks if items are not comments
+							if($0.type != "comment"){
+								// Filter checks if search bar is empty, then checks if the Story is not nil, then evaluates .contain
+								if (self.searchText.isEmpty){
+									return true
+								} else if ($0.title != nil){
+									return $0.title!.lowercased().contains(self.searchText)
 								} else {
-									return false
+									return true
 								}
-							}, id: \.self){ story in
-								// If let used to make sure that the story exists in the stories array
-								if let s = story {
-										NavigationLink(destination: StoryView(story: s)/*.matchedGeometryEffect(id: "storyOpen", in: matchedGeo)*/){
-											StoryRowView(story: s)
-										}//.matchedGeometryEffect(id: "storyOpen", in: matchedGeo)
-								}
+							} else {
+								return false
 							}
-							//.fixedSize()
-							//.frame(width: 200, height: 200)
-							//.frame(maxWidth: .infinity)
-							//.listRowBackground(colorScheme != .dark ? Color.black : Color.white)
-							.listRowBackground(Color.clear)
-							
-							Text(self.getData.items.count == 500 ? "That's all 500 HN stories!" : (self.searchText.isEmpty) ? "Loading ... " : "")
-								.padding(.bottom, 10)
-								.frame(maxWidth: .infinity, alignment: .center)
-							
-								// Load the next stories in topStories when we reach end of list
-								.onAppear {
-									if (self.getData.items.last != nil){
-										getData.getNextStories(int: 10)
-									}
-								}
-						}
-						.pullToRefresh(isShowing: $isShowing) {
-							getData.refresh()
-							DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-								self.isShowing = false
+						}, id: \.self){ story in
+							// If let used to make sure that the story exists in the stories array
+							if let s = story {
+									NavigationLink(destination: StoryView(story: s)/*.matchedGeometryEffect(id: "storyOpen", in: matchedGeo)*/){
+										StoryRowView(story: s)
+									}//.matchedGeometryEffect(id: "storyOpen", in: matchedGeo)
 							}
 						}
-					//}
+						.listRowBackground(Color.clear)
+						
+						Text(self.getData.items.count == 500 ? "That's all 500 HN stories!" : (self.searchText.isEmpty) ? "Loading ... " : "")
+							.padding(.bottom, 10)
+							.frame(maxWidth: .infinity, alignment: .center)
+						
+							// Load the next stories in topStories when we reach end of list
+							.onAppear {
+								if (self.getData.items.last != nil){
+									getData.getNextStories(int: 10)
+								}
+							}
+					}
+					.pullToRefresh(isShowing: $isShowing) {
+						getData.refresh()
+						DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+							self.isShowing = false
+						}
+					}
 				}
 			}
+			.padding(-20.0)
 			.navigationBarTitle(Text("Hacker News"))
 		}
     }

@@ -44,13 +44,7 @@ struct StoryRowView: View {
 						.padding(.bottom, 10)
 				}
 			}.padding(.trailing, 20)
-			//Spacer()
 		}
-		//.frame(maxWidth: .infinity, alignment: .center)
-		//.background(Color(red: 32/255, green: 36/255, blue: 38/255))
-		//.cornerRadius(20)
-		//.shadow(color: Color.black.opacity(0.2), radius: 20, x: 0, y: 0)
-		//.padding(.all, 10)
 	}
 }
 
