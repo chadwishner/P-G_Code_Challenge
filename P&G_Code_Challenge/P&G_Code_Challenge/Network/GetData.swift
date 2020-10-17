@@ -149,7 +149,6 @@ class GetData: ObservableObject {
 	@param item to retrieve all children
 	*/
 	func getAllComments(item: Item){
-		
 		// If children exist we want to loop through each kid and get the data
 		if (item.kids != nil) {
 			for kid in item.kids! {
