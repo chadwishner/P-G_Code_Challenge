@@ -35,7 +35,8 @@ struct CommentView: View {
 					// Make sure we only display comments
 					$0.type == "comment" ? true : false
 			 }){ comment in
-					CommentView(comment: comment).fixedSize(horizontal: false, vertical: true)
+					CommentView(comment: comment)//.fixedSize(horizontal: false, vertical: true)
+						.frame(maxHeight: .infinity)
 				}
 			}
 		}

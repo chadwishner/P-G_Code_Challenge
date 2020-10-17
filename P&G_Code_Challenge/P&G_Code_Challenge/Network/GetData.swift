@@ -36,12 +36,16 @@ class GetData: ObservableObject {
 	
 	/** Function for refreshing TopStoriesContentView
 	*/
-//	func refresh(){
-//		stories = [Story?](repeating: nil, count: 500)
-//		getTopStories { (topStories) in
-////			print(topStories)
-//		}
-//	}
+	func refresh(){
+		// Erase all data
+		items = [Item]()
+		itemsDict = [Int: Item]()
+		topStories = [Int]()
+		
+		// Call getTopStories
+		getTopStories { (topStories) in
+		}
+	}
 	
 	/** This is a network function that calls for the top 500 Hacker News stories
 	*/

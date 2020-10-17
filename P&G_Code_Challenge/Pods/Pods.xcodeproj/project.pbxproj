@@ -1,0 +1,1205 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 52;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		04516B10D23612F1EF169D07F5E5D412 /* AppKitIntrospectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18075A30D98B5ACC5C439C4D2BBB56EE /* AppKitIntrospectionView.swift */; };
+		0CD75FDC5A3527BD6C50F7D9D572E4EB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 740A100F2813E60CA47F6E5E9A433798 /* Foundation.framework */; };
+		16E8EAC03AAA2F8D3D1A30EDB162A46A /* SwiftUIRefresh-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = CCC10654FB1DA1B1F4FEC8739EF2C226 /* SwiftUIRefresh-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		21E83A7DB27CC895D7FEA876E490DBBD /* Introspect.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5228E055AFB3DAE8D8B249D61CF8A8E4 /* Introspect.framework */; };
+		26A76676C1314B46DF5F1F1313ABE2F4 /* Introspect.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48A0002FD3E3D8F8A82558A09A0E724 /* Introspect.swift */; };
+		5633F1F0ECC61CAFD663380E40A4D96B /* Pods-P&G_Code_Challenge-P&G_Code_ChallengeUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 61B92FEE908340A3674CCDABF160D678 /* Pods-P&G_Code_Challenge-P&G_Code_ChallengeUITests-dummy.m */; };
+		65B8C15B087FE65AA21E1731396F167C /* PullToRefresh.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7E498B3A40C69AEEC5BBD58D97673D /* PullToRefresh.swift */; };
+		875775C74984C13DD3750FEAAAC189E6 /* Pods-P&G_Code_Challenge-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 37421FC19FF4A5E581D55D56C37C4648 /* Pods-P&G_Code_Challenge-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8D71D78B70F3B89ECC1DE90DA8FAF3F4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 740A100F2813E60CA47F6E5E9A433798 /* Foundation.framework */; };
+		8E0F7EB403CC90FF36E67EBD421B7E97 /* Pods-P&G_Code_ChallengeTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D5412F8B1D19B95F13A1FA96838B356C /* Pods-P&G_Code_ChallengeTests-dummy.m */; };
+		905AE59A2DE46045869F61E6DCCC39B9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 740A100F2813E60CA47F6E5E9A433798 /* Foundation.framework */; };
+		A45C537B4C17E59A42F3E856517B9674 /* Pods-P&G_Code_Challenge-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D2F5BC4F10EADF4A9A82F4E88B0EDCF /* Pods-P&G_Code_Challenge-dummy.m */; };
+		A8B0DC12BE200007F9EB2D65531A84CA /* UIKitIntrospectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47B1C0F0F28A4E7F39B4DB3E80630874 /* UIKitIntrospectionView.swift */; };
+		C975F14A85D25E38D404C2EACF6CAB8A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 740A100F2813E60CA47F6E5E9A433798 /* Foundation.framework */; };
+		CB485DF96B843B0720B142CE227F4274 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 740A100F2813E60CA47F6E5E9A433798 /* Foundation.framework */; };
+		CBBB3C3152D4C6E2F661C3E5E813147C /* Introspect-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = EF6D76C0F7762635F2BCFE4E7A5FB44C /* Introspect-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CE6D0E23BE0EA7A7E7354830430D60D4 /* Pods-P&G_Code_Challenge-P&G_Code_ChallengeUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6CD415A675AEC8C7F4272C6BFB882D20 /* Pods-P&G_Code_Challenge-P&G_Code_ChallengeUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D8DE7403B046571663D236C6905B4E52 /* UIKitIntrospectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E699F93197C4B3EB6B473DD9EB665EB /* UIKitIntrospectionViewController.swift */; };
+		DC54D0043AB91D41580F0A2C74014EF4 /* Pods-P&G_Code_ChallengeTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = EBE7C91EA8797BB66BE11505DB760762 /* Pods-P&G_Code_ChallengeTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DE9FE1FE2E7B9C17B1FB97C6E613DFF2 /* ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E497B38BED618F3A45F10E5C9B66388E /* ViewExtensions.swift */; };
+		F9CD362F6079BC32C3CA3B0E1E342ED6 /* SwiftUIRefresh-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E2362B8B4476E8378552851DEC780232 /* SwiftUIRefresh-dummy.m */; };
+		FEE53BB666EC19D440243E6ED59F33CC /* Introspect-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A7BD340D498E2D906DDA8DDDAE036B2 /* Introspect-dummy.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5001921EB25AE1BAB7A4A4EA0FA393B8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DF1043773BCDA1ADFCD6F61A2E539F50;
+			remoteInfo = SwiftUIRefresh;
+		};
+		75B5406461C5DE1FF01ECF21EDB938F9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AF89E725B5BFD7B82B187D30E954EED9;
+			remoteInfo = "Pods-P&G_Code_Challenge";
+		};
+		A1D4BDFA4D2DD5B89DFF532F30E2DBF0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 97E3685499568DCCBA6C15905F707BDC;
+			remoteInfo = Introspect;
+		};
+		AF9500B987AB44035FD1DAAEC2B9BA9A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DF1043773BCDA1ADFCD6F61A2E539F50;
+			remoteInfo = SwiftUIRefresh;
+		};
+		CD058FE7DDF0774929E1ED9C464EE0F5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 97E3685499568DCCBA6C15905F707BDC;
+			remoteInfo = Introspect;
+		};
+		D04CDC92645DBE93CD7F5B2352DEA8A2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 97E3685499568DCCBA6C15905F707BDC;
+			remoteInfo = Introspect;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		027FF84C9169965E3FBE80C35ED7C6B2 /* Introspect.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Introspect.release.xcconfig; sourceTree = "<group>"; };
+		02869C3A1D1DA61029C0B5D7148EA7FE /* SwiftUIRefresh.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SwiftUIRefresh.modulemap; sourceTree = "<group>"; };
+		09BABBB9FB038228DB4181E9AD510DB2 /* SwiftUIRefresh.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftUIRefresh.debug.xcconfig; sourceTree = "<group>"; };
+		0A7BD340D498E2D906DDA8DDDAE036B2 /* Introspect-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Introspect-dummy.m"; sourceTree = "<group>"; };
+		0B416435B7029F1F688EF3F2CD6EC9B7 /* Introspect-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Introspect-prefix.pch"; sourceTree = "<group>"; };
+		18075A30D98B5ACC5C439C4D2BBB56EE /* AppKitIntrospectionView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AppKitIntrospectionView.swift; path = Introspect/AppKitIntrospectionView.swift; sourceTree = "<group>"; };
+		1C6A3FECC88417E47ADB61CA10B43D09 /* Introspect.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Introspect.modulemap; sourceTree = "<group>"; };
+		2CD07BBA32C38D6E9772C4408D48B427 /* Pods_P_G_Code_Challenge_P_G_Code_ChallengeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_P_G_Code_Challenge_P_G_Code_ChallengeUITests.framework; path = "Pods-P&G_Code_Challenge-P&G_Code_ChallengeUITests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2E7E498B3A40C69AEEC5BBD58D97673D /* PullToRefresh.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PullToRefresh.swift; path = Sources/PullToRefresh.swift; sourceTree = "<group>"; };
+		35CEED67FE0DF21E5C18AD951F67CF82 /* SwiftUIRefresh.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftUIRefresh.release.xcconfig; sourceTree = "<group>"; };
+		37421FC19FF4A5E581D55D56C37C4648 /* Pods-P&G_Code_Challenge-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-P&G_Code_Challenge-umbrella.h"; sourceTree = "<group>"; };
+		39CDCBC61C7213647F89A0ACCEE2635A /* Pods-P&G_Code_Challenge-P&G_Code_ChallengeUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-P&G_Code_Challenge-P&G_Code_ChallengeUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		3AFB6809E3AB15296C980F2F55FC9C9F /* Pods-P&G_Code_ChallengeTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-P&G_Code_ChallengeTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		3E699F93197C4B3EB6B473DD9EB665EB /* UIKitIntrospectionViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UIKitIntrospectionViewController.swift; path = Introspect/UIKitIntrospectionViewController.swift; sourceTree = "<group>"; };
+		4310B3EECF28CCBE4B787D595387B4DB /* Pods_P_G_Code_Challenge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_P_G_Code_Challenge.framework; path = "Pods-P&G_Code_Challenge.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		47B1C0F0F28A4E7F39B4DB3E80630874 /* UIKitIntrospectionView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UIKitIntrospectionView.swift; path = Introspect/UIKitIntrospectionView.swift; sourceTree = "<group>"; };
+		5228E055AFB3DAE8D8B249D61CF8A8E4 /* Introspect.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Introspect.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5D268B77B2CB12ED6101CB8ABF6FBD2B /* Pods-P&G_Code_Challenge-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-P&G_Code_Challenge-acknowledgements.markdown"; sourceTree = "<group>"; };
+		5D713138E71EA4645C35240061394134 /* Pods-P&G_Code_Challenge-P&G_Code_ChallengeUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-P&G_Code_Challenge-P&G_Code_ChallengeUITests-acknowledgements.plist"; sourceTree = "<group>"; };
+		60FBC7A9FB377F063693D4D1B38094E1 /* Pods-P&G_Code_ChallengeTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-P&G_Code_ChallengeTests.modulemap"; sourceTree = "<group>"; };
+		61B92FEE908340A3674CCDABF160D678 /* Pods-P&G_Code_Challenge-P&G_Code_ChallengeUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-P&G_Code_Challenge-P&G_Code_ChallengeUITests-dummy.m"; sourceTree = "<group>"; };
+		6CD415A675AEC8C7F4272C6BFB882D20 /* Pods-P&G_Code_Challenge-P&G_Code_ChallengeUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-P&G_Code_Challenge-P&G_Code_ChallengeUITests-umbrella.h"; sourceTree = "<group>"; };
+		6D2F5BC4F10EADF4A9A82F4E88B0EDCF /* Pods-P&G_Code_Challenge-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-P&G_Code_Challenge-dummy.m"; sourceTree = "<group>"; };
+		740A100F2813E60CA47F6E5E9A433798 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		7797BDDF70E2C7D42ADC8182B4E271A8 /* Pods-P&G_Code_Challenge-P&G_Code_ChallengeUITests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-P&G_Code_Challenge-P&G_Code_ChallengeUITests-Info.plist"; sourceTree = "<group>"; };
+		7EA8BF7E66C6AB45EFF6850518486BCD /* Pods-P&G_Code_Challenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-P&G_Code_Challenge.release.xcconfig"; sourceTree = "<group>"; };
+		7FB86C9B5FFA7AE1F8A3810D68ECABEA /* SwiftUIRefresh.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SwiftUIRefresh.framework; path = SwiftUIRefresh.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		86663E28F6A8A37CE7937462066AA7EA /* Pods-P&G_Code_Challenge-P&G_Code_ChallengeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-P&G_Code_Challenge-P&G_Code_ChallengeUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		88AAE464DB9B63AD241F8950A8111A9B /* Pods-P&G_Code_Challenge-P&G_Code_ChallengeUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-P&G_Code_Challenge-P&G_Code_ChallengeUITests-frameworks.sh"; sourceTree = "<group>"; };
+		8DC16B271401E8C794F4B5BAAE108A46 /* Pods-P&G_Code_ChallengeTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-P&G_Code_ChallengeTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		9628888470322A9D08F648C42288005F /* Pods-P&G_Code_ChallengeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-P&G_Code_ChallengeTests.debug.xcconfig"; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A2272206DA8AE58CDE803B06165F1E51 /* Pods-P&G_Code_Challenge-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-P&G_Code_Challenge-frameworks.sh"; sourceTree = "<group>"; };
+		B05BDB3201DBAC30BDBF56BA53BC1AB5 /* Pods-P&G_Code_Challenge-P&G_Code_ChallengeUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-P&G_Code_Challenge-P&G_Code_ChallengeUITests.modulemap"; sourceTree = "<group>"; };
+		B4A96D055D00DAB29BFEEDD67557E2A4 /* SwiftUIRefresh-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "SwiftUIRefresh-Info.plist"; sourceTree = "<group>"; };
+		BCAEC394B066546231643860F1B4B1FF /* Pods-P&G_Code_Challenge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-P&G_Code_Challenge.debug.xcconfig"; sourceTree = "<group>"; };
+		BD2EAB5AA5D6330A70B11CACA8BD57B9 /* Pods_P_G_Code_ChallengeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_P_G_Code_ChallengeTests.framework; path = "Pods-P&G_Code_ChallengeTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C6AE50A38087C8F6C8B8D7BB70CFCE0A /* Pods-P&G_Code_Challenge-P&G_Code_ChallengeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-P&G_Code_Challenge-P&G_Code_ChallengeUITests.release.xcconfig"; sourceTree = "<group>"; };
+		C83882D15DE607D612575132C1B88A29 /* Pods-P&G_Code_Challenge-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-P&G_Code_Challenge-acknowledgements.plist"; sourceTree = "<group>"; };
+		CCC10654FB1DA1B1F4FEC8739EF2C226 /* SwiftUIRefresh-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftUIRefresh-umbrella.h"; sourceTree = "<group>"; };
+		D0A70003FD5E49B30CA83DAAFE03116B /* Introspect.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Introspect.framework; path = Introspect.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D51C0FB6629F4B3C0343A8C848EF5170 /* Introspect-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Introspect-Info.plist"; sourceTree = "<group>"; };
+		D5412F8B1D19B95F13A1FA96838B356C /* Pods-P&G_Code_ChallengeTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-P&G_Code_ChallengeTests-dummy.m"; sourceTree = "<group>"; };
+		D5438B8A877429493758D33733020773 /* SwiftUIRefresh-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftUIRefresh-prefix.pch"; sourceTree = "<group>"; };
+		DE9E05C85CEAFED62F34E0561418774A /* Pods-P&G_Code_ChallengeTests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-P&G_Code_ChallengeTests-Info.plist"; sourceTree = "<group>"; };
+		E2362B8B4476E8378552851DEC780232 /* SwiftUIRefresh-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftUIRefresh-dummy.m"; sourceTree = "<group>"; };
+		E426200A124C94177C3E9AE5ECCB2FC2 /* Pods-P&G_Code_Challenge-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-P&G_Code_Challenge-Info.plist"; sourceTree = "<group>"; };
+		E497B38BED618F3A45F10E5C9B66388E /* ViewExtensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ViewExtensions.swift; path = Introspect/ViewExtensions.swift; sourceTree = "<group>"; };
+		E9D8F63EAD66BF495E42DBC1507564CF /* Pods-P&G_Code_ChallengeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-P&G_Code_ChallengeTests.release.xcconfig"; sourceTree = "<group>"; };
+		EBE7C91EA8797BB66BE11505DB760762 /* Pods-P&G_Code_ChallengeTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-P&G_Code_ChallengeTests-umbrella.h"; sourceTree = "<group>"; };
+		EF6D76C0F7762635F2BCFE4E7A5FB44C /* Introspect-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Introspect-umbrella.h"; sourceTree = "<group>"; };
+		F0A4AA697718A9D5135FFD6E52346380 /* Introspect.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Introspect.debug.xcconfig; sourceTree = "<group>"; };
+		F1C4346625CF4744103DAB1EF0D0ADF9 /* Pods-P&G_Code_Challenge.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-P&G_Code_Challenge.modulemap"; sourceTree = "<group>"; };
+		F48A0002FD3E3D8F8A82558A09A0E724 /* Introspect.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Introspect.swift; path = Introspect/Introspect.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1DED21706F9DC31102142C138120BF92 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D71D78B70F3B89ECC1DE90DA8FAF3F4 /* Foundation.framework in Frameworks */,
+				21E83A7DB27CC895D7FEA876E490DBBD /* Introspect.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		25463633883DD9A6E1CBD2E16A5DB511 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0CD75FDC5A3527BD6C50F7D9D572E4EB /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2B2FE01BF08A6F9FE017BF421F7A8C7C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C975F14A85D25E38D404C2EACF6CAB8A /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		31FA779C2E2C1439F386AC99AEC8D9FC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CB485DF96B843B0720B142CE227F4274 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B96232F2829755DBD91A3C50403B57B9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				905AE59A2DE46045869F61E6DCCC39B9 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4B243FBD50C8CDF1A605824A56BCE634 /* SwiftUIRefresh */ = {
+			isa = PBXGroup;
+			children = (
+				2E7E498B3A40C69AEEC5BBD58D97673D /* PullToRefresh.swift */,
+				6B1A3306D2639F918F2E7E4EA7786131 /* Support Files */,
+			);
+			name = SwiftUIRefresh;
+			path = SwiftUIRefresh;
+			sourceTree = "<group>";
+		};
+		55C6D419B434E4735E9AE97C5211DF65 /* Pods-P&G_Code_Challenge */ = {
+			isa = PBXGroup;
+			children = (
+				F1C4346625CF4744103DAB1EF0D0ADF9 /* Pods-P&G_Code_Challenge.modulemap */,
+				5D268B77B2CB12ED6101CB8ABF6FBD2B /* Pods-P&G_Code_Challenge-acknowledgements.markdown */,
+				C83882D15DE607D612575132C1B88A29 /* Pods-P&G_Code_Challenge-acknowledgements.plist */,
+				6D2F5BC4F10EADF4A9A82F4E88B0EDCF /* Pods-P&G_Code_Challenge-dummy.m */,
+				A2272206DA8AE58CDE803B06165F1E51 /* Pods-P&G_Code_Challenge-frameworks.sh */,
+				E426200A124C94177C3E9AE5ECCB2FC2 /* Pods-P&G_Code_Challenge-Info.plist */,
+				37421FC19FF4A5E581D55D56C37C4648 /* Pods-P&G_Code_Challenge-umbrella.h */,
+				BCAEC394B066546231643860F1B4B1FF /* Pods-P&G_Code_Challenge.debug.xcconfig */,
+				7EA8BF7E66C6AB45EFF6850518486BCD /* Pods-P&G_Code_Challenge.release.xcconfig */,
+			);
+			name = "Pods-P&G_Code_Challenge";
+			path = "Target Support Files/Pods-P&G_Code_Challenge";
+			sourceTree = "<group>";
+		};
+		5C5DF8F17FA43FD2332C2551AD5A5F02 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D0A70003FD5E49B30CA83DAAFE03116B /* Introspect.framework */,
+				4310B3EECF28CCBE4B787D595387B4DB /* Pods_P_G_Code_Challenge.framework */,
+				2CD07BBA32C38D6E9772C4408D48B427 /* Pods_P_G_Code_Challenge_P_G_Code_ChallengeUITests.framework */,
+				BD2EAB5AA5D6330A70B11CACA8BD57B9 /* Pods_P_G_Code_ChallengeTests.framework */,
+				7FB86C9B5FFA7AE1F8A3810D68ECABEA /* SwiftUIRefresh.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6B1A3306D2639F918F2E7E4EA7786131 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				02869C3A1D1DA61029C0B5D7148EA7FE /* SwiftUIRefresh.modulemap */,
+				E2362B8B4476E8378552851DEC780232 /* SwiftUIRefresh-dummy.m */,
+				B4A96D055D00DAB29BFEEDD67557E2A4 /* SwiftUIRefresh-Info.plist */,
+				D5438B8A877429493758D33733020773 /* SwiftUIRefresh-prefix.pch */,
+				CCC10654FB1DA1B1F4FEC8739EF2C226 /* SwiftUIRefresh-umbrella.h */,
+				09BABBB9FB038228DB4181E9AD510DB2 /* SwiftUIRefresh.debug.xcconfig */,
+				35CEED67FE0DF21E5C18AD951F67CF82 /* SwiftUIRefresh.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/SwiftUIRefresh";
+			sourceTree = "<group>";
+		};
+		74D96C14856ADADBAB941AA2DFC0C287 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E07BAEF0AA227A1B1D4231983E0C1318 /* Introspect */,
+				4B243FBD50C8CDF1A605824A56BCE634 /* SwiftUIRefresh */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		85BA339B0053A2605A0E1AFFFEEC7CB8 /* Pods-P&G_Code_ChallengeTests */ = {
+			isa = PBXGroup;
+			children = (
+				60FBC7A9FB377F063693D4D1B38094E1 /* Pods-P&G_Code_ChallengeTests.modulemap */,
+				3AFB6809E3AB15296C980F2F55FC9C9F /* Pods-P&G_Code_ChallengeTests-acknowledgements.markdown */,
+				8DC16B271401E8C794F4B5BAAE108A46 /* Pods-P&G_Code_ChallengeTests-acknowledgements.plist */,
+				D5412F8B1D19B95F13A1FA96838B356C /* Pods-P&G_Code_ChallengeTests-dummy.m */,
+				DE9E05C85CEAFED62F34E0561418774A /* Pods-P&G_Code_ChallengeTests-Info.plist */,
+				EBE7C91EA8797BB66BE11505DB760762 /* Pods-P&G_Code_ChallengeTests-umbrella.h */,
+				9628888470322A9D08F648C42288005F /* Pods-P&G_Code_ChallengeTests.debug.xcconfig */,
+				E9D8F63EAD66BF495E42DBC1507564CF /* Pods-P&G_Code_ChallengeTests.release.xcconfig */,
+			);
+			name = "Pods-P&G_Code_ChallengeTests";
+			path = "Target Support Files/Pods-P&G_Code_ChallengeTests";
+			sourceTree = "<group>";
+		};
+		94B772498E4F4730F2DE06B80936B7A1 /* Pods-P&G_Code_Challenge-P&G_Code_ChallengeUITests */ = {
+			isa = PBXGroup;
+			children = (
+				B05BDB3201DBAC30BDBF56BA53BC1AB5 /* Pods-P&G_Code_Challenge-P&G_Code_ChallengeUITests.modulemap */,
+				39CDCBC61C7213647F89A0ACCEE2635A /* Pods-P&G_Code_Challenge-P&G_Code_ChallengeUITests-acknowledgements.markdown */,
+				5D713138E71EA4645C35240061394134 /* Pods-P&G_Code_Challenge-P&G_Code_ChallengeUITests-acknowledgements.plist */,
+				61B92FEE908340A3674CCDABF160D678 /* Pods-P&G_Code_Challenge-P&G_Code_ChallengeUITests-dummy.m */,
+				88AAE464DB9B63AD241F8950A8111A9B /* Pods-P&G_Code_Challenge-P&G_Code_ChallengeUITests-frameworks.sh */,
+				7797BDDF70E2C7D42ADC8182B4E271A8 /* Pods-P&G_Code_Challenge-P&G_Code_ChallengeUITests-Info.plist */,
+				6CD415A675AEC8C7F4272C6BFB882D20 /* Pods-P&G_Code_Challenge-P&G_Code_ChallengeUITests-umbrella.h */,
+				86663E28F6A8A37CE7937462066AA7EA /* Pods-P&G_Code_Challenge-P&G_Code_ChallengeUITests.debug.xcconfig */,
+				C6AE50A38087C8F6C8B8D7BB70CFCE0A /* Pods-P&G_Code_Challenge-P&G_Code_ChallengeUITests.release.xcconfig */,
+			);
+			name = "Pods-P&G_Code_Challenge-P&G_Code_ChallengeUITests";
+			path = "Target Support Files/Pods-P&G_Code_Challenge-P&G_Code_ChallengeUITests";
+			sourceTree = "<group>";
+		};
+		A79EE7EE131D3846CBF2A4E64D65A9FE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5228E055AFB3DAE8D8B249D61CF8A8E4 /* Introspect.framework */,
+				ABD951A31ED31995F4CE7AEB56995526 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		ABD951A31ED31995F4CE7AEB56995526 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				740A100F2813E60CA47F6E5E9A433798 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		B353FC36F872A9CAFFBE64BBFA87C81C /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				55C6D419B434E4735E9AE97C5211DF65 /* Pods-P&G_Code_Challenge */,
+				94B772498E4F4730F2DE06B80936B7A1 /* Pods-P&G_Code_Challenge-P&G_Code_ChallengeUITests */,
+				85BA339B0053A2605A0E1AFFFEEC7CB8 /* Pods-P&G_Code_ChallengeTests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		CF1408CF629C7361332E53B88F7BD30C = {
+			isa = PBXGroup;
+			children = (
+				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
+				A79EE7EE131D3846CBF2A4E64D65A9FE /* Frameworks */,
+				74D96C14856ADADBAB941AA2DFC0C287 /* Pods */,
+				5C5DF8F17FA43FD2332C2551AD5A5F02 /* Products */,
+				B353FC36F872A9CAFFBE64BBFA87C81C /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		D006FCA15A34C3F531651939B2D781D5 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				1C6A3FECC88417E47ADB61CA10B43D09 /* Introspect.modulemap */,
+				0A7BD340D498E2D906DDA8DDDAE036B2 /* Introspect-dummy.m */,
+				D51C0FB6629F4B3C0343A8C848EF5170 /* Introspect-Info.plist */,
+				0B416435B7029F1F688EF3F2CD6EC9B7 /* Introspect-prefix.pch */,
+				EF6D76C0F7762635F2BCFE4E7A5FB44C /* Introspect-umbrella.h */,
+				F0A4AA697718A9D5135FFD6E52346380 /* Introspect.debug.xcconfig */,
+				027FF84C9169965E3FBE80C35ED7C6B2 /* Introspect.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Introspect";
+			sourceTree = "<group>";
+		};
+		E07BAEF0AA227A1B1D4231983E0C1318 /* Introspect */ = {
+			isa = PBXGroup;
+			children = (
+				18075A30D98B5ACC5C439C4D2BBB56EE /* AppKitIntrospectionView.swift */,
+				F48A0002FD3E3D8F8A82558A09A0E724 /* Introspect.swift */,
+				47B1C0F0F28A4E7F39B4DB3E80630874 /* UIKitIntrospectionView.swift */,
+				3E699F93197C4B3EB6B473DD9EB665EB /* UIKitIntrospectionViewController.swift */,
+				E497B38BED618F3A45F10E5C9B66388E /* ViewExtensions.swift */,
+				D006FCA15A34C3F531651939B2D781D5 /* Support Files */,
+			);
+			name = Introspect;
+			path = Introspect;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		07CE619423C1CB15F0C109E53DBAA319 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC54D0043AB91D41580F0A2C74014EF4 /* Pods-P&G_Code_ChallengeTests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		197020ED6F13F0DF0D66B4DA84538C48 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE6D0E23BE0EA7A7E7354830430D60D4 /* Pods-P&G_Code_Challenge-P&G_Code_ChallengeUITests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		49FFAC9D1753C480EA6D5283A2503E9B /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				16E8EAC03AAA2F8D3D1A30EDB162A46A /* SwiftUIRefresh-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		734844F8B2AECFAD6966BA161F1CA020 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				875775C74984C13DD3750FEAAAC189E6 /* Pods-P&G_Code_Challenge-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C4A87CCF965CA6A18F5C4D219FBD897B /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CBBB3C3152D4C6E2F661C3E5E813147C /* Introspect-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		6E0CF86E61D0C8F8EDD00CF48348ACBC /* Pods-P&G_Code_ChallengeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CFA7C35D72D14D307D26622F832B39A7 /* Build configuration list for PBXNativeTarget "Pods-P&G_Code_ChallengeTests" */;
+			buildPhases = (
+				07CE619423C1CB15F0C109E53DBAA319 /* Headers */,
+				B66DAC3287E342A3976DB4919172D891 /* Sources */,
+				25463633883DD9A6E1CBD2E16A5DB511 /* Frameworks */,
+				64B462C8158F4A74EBE42F3A5C8CB0FE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5D61DA3F30AB6C71ED773241DC6F8D75 /* PBXTargetDependency */,
+			);
+			name = "Pods-P&G_Code_ChallengeTests";
+			productName = "Pods-P&G_Code_ChallengeTests";
+			productReference = BD2EAB5AA5D6330A70B11CACA8BD57B9 /* Pods_P_G_Code_ChallengeTests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		97E3685499568DCCBA6C15905F707BDC /* Introspect */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 16B9305882DF4E5359A9C88CFB34D3D7 /* Build configuration list for PBXNativeTarget "Introspect" */;
+			buildPhases = (
+				C4A87CCF965CA6A18F5C4D219FBD897B /* Headers */,
+				EDC774157FF0F74DA662C65D8D058FEF /* Sources */,
+				31FA779C2E2C1439F386AC99AEC8D9FC /* Frameworks */,
+				0CF6844CDBF49121C460836A8676E396 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Introspect;
+			productName = Introspect;
+			productReference = D0A70003FD5E49B30CA83DAAFE03116B /* Introspect.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		AF89E725B5BFD7B82B187D30E954EED9 /* Pods-P&G_Code_Challenge */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0E5616A2A7E1DE330106AE7B6DAFD9D9 /* Build configuration list for PBXNativeTarget "Pods-P&G_Code_Challenge" */;
+			buildPhases = (
+				734844F8B2AECFAD6966BA161F1CA020 /* Headers */,
+				68EC1355924E7EFCD82856684F315287 /* Sources */,
+				B96232F2829755DBD91A3C50403B57B9 /* Frameworks */,
+				26FF5A1D1D7F6413080714B4269DB0C2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A14CEF0411E1C7B9A228CB46FF7BFC58 /* PBXTargetDependency */,
+				CC0E09EFD6B975AB62545DE3B01A6C45 /* PBXTargetDependency */,
+			);
+			name = "Pods-P&G_Code_Challenge";
+			productName = "Pods-P&G_Code_Challenge";
+			productReference = 4310B3EECF28CCBE4B787D595387B4DB /* Pods_P_G_Code_Challenge.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		DADA5F68AC2B1A6DA5570076D1C3DF48 /* Pods-P&G_Code_Challenge-P&G_Code_ChallengeUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FDA6FEEFB244714810F3539811C3AA18 /* Build configuration list for PBXNativeTarget "Pods-P&G_Code_Challenge-P&G_Code_ChallengeUITests" */;
+			buildPhases = (
+				197020ED6F13F0DF0D66B4DA84538C48 /* Headers */,
+				08E7238CDCF2716ABC422AE3156AF578 /* Sources */,
+				2B2FE01BF08A6F9FE017BF421F7A8C7C /* Frameworks */,
+				BA18D5848DE80DD0A4D7050471A5BBEA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				105D8BE368F9620A05F3AD6AE18E8A66 /* PBXTargetDependency */,
+				86312AADD9628B5BEFEC3D3D9531992B /* PBXTargetDependency */,
+			);
+			name = "Pods-P&G_Code_Challenge-P&G_Code_ChallengeUITests";
+			productName = "Pods-P&G_Code_Challenge-P&G_Code_ChallengeUITests";
+			productReference = 2CD07BBA32C38D6E9772C4408D48B427 /* Pods_P_G_Code_Challenge_P_G_Code_ChallengeUITests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		DF1043773BCDA1ADFCD6F61A2E539F50 /* SwiftUIRefresh */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6CA6FB0ED8546FA1FF164660523A04AE /* Build configuration list for PBXNativeTarget "SwiftUIRefresh" */;
+			buildPhases = (
+				49FFAC9D1753C480EA6D5283A2503E9B /* Headers */,
+				245AC0FE7F6FBB0C87E091B6377B0814 /* Sources */,
+				1DED21706F9DC31102142C138120BF92 /* Frameworks */,
+				EDE3D79B08D149F008A1C597C3CCEE2D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CDAB7FF1690C96CAADE0563F4E99C6F7 /* PBXTargetDependency */,
+			);
+			name = SwiftUIRefresh;
+			productName = SwiftUIRefresh;
+			productReference = 7FB86C9B5FFA7AE1F8A3810D68ECABEA /* SwiftUIRefresh.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1100;
+				LastUpgradeCheck = 1100;
+			};
+			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 11.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
+			productRefGroup = 5C5DF8F17FA43FD2332C2551AD5A5F02 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				97E3685499568DCCBA6C15905F707BDC /* Introspect */,
+				AF89E725B5BFD7B82B187D30E954EED9 /* Pods-P&G_Code_Challenge */,
+				DADA5F68AC2B1A6DA5570076D1C3DF48 /* Pods-P&G_Code_Challenge-P&G_Code_ChallengeUITests */,
+				6E0CF86E61D0C8F8EDD00CF48348ACBC /* Pods-P&G_Code_ChallengeTests */,
+				DF1043773BCDA1ADFCD6F61A2E539F50 /* SwiftUIRefresh */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0CF6844CDBF49121C460836A8676E396 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		26FF5A1D1D7F6413080714B4269DB0C2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		64B462C8158F4A74EBE42F3A5C8CB0FE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BA18D5848DE80DD0A4D7050471A5BBEA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EDE3D79B08D149F008A1C597C3CCEE2D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		08E7238CDCF2716ABC422AE3156AF578 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5633F1F0ECC61CAFD663380E40A4D96B /* Pods-P&G_Code_Challenge-P&G_Code_ChallengeUITests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		245AC0FE7F6FBB0C87E091B6377B0814 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				65B8C15B087FE65AA21E1731396F167C /* PullToRefresh.swift in Sources */,
+				F9CD362F6079BC32C3CA3B0E1E342ED6 /* SwiftUIRefresh-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		68EC1355924E7EFCD82856684F315287 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A45C537B4C17E59A42F3E856517B9674 /* Pods-P&G_Code_Challenge-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B66DAC3287E342A3976DB4919172D891 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8E0F7EB403CC90FF36E67EBD421B7E97 /* Pods-P&G_Code_ChallengeTests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EDC774157FF0F74DA662C65D8D058FEF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04516B10D23612F1EF169D07F5E5D412 /* AppKitIntrospectionView.swift in Sources */,
+				FEE53BB666EC19D440243E6ED59F33CC /* Introspect-dummy.m in Sources */,
+				26A76676C1314B46DF5F1F1313ABE2F4 /* Introspect.swift in Sources */,
+				A8B0DC12BE200007F9EB2D65531A84CA /* UIKitIntrospectionView.swift in Sources */,
+				D8DE7403B046571663D236C6905B4E52 /* UIKitIntrospectionViewController.swift in Sources */,
+				DE9FE1FE2E7B9C17B1FB97C6E613DFF2 /* ViewExtensions.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		105D8BE368F9620A05F3AD6AE18E8A66 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Introspect;
+			target = 97E3685499568DCCBA6C15905F707BDC /* Introspect */;
+			targetProxy = D04CDC92645DBE93CD7F5B2352DEA8A2 /* PBXContainerItemProxy */;
+		};
+		5D61DA3F30AB6C71ED773241DC6F8D75 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-P&G_Code_Challenge";
+			target = AF89E725B5BFD7B82B187D30E954EED9 /* Pods-P&G_Code_Challenge */;
+			targetProxy = 75B5406461C5DE1FF01ECF21EDB938F9 /* PBXContainerItemProxy */;
+		};
+		86312AADD9628B5BEFEC3D3D9531992B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SwiftUIRefresh;
+			target = DF1043773BCDA1ADFCD6F61A2E539F50 /* SwiftUIRefresh */;
+			targetProxy = AF9500B987AB44035FD1DAAEC2B9BA9A /* PBXContainerItemProxy */;
+		};
+		A14CEF0411E1C7B9A228CB46FF7BFC58 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Introspect;
+			target = 97E3685499568DCCBA6C15905F707BDC /* Introspect */;
+			targetProxy = A1D4BDFA4D2DD5B89DFF532F30E2DBF0 /* PBXContainerItemProxy */;
+		};
+		CC0E09EFD6B975AB62545DE3B01A6C45 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SwiftUIRefresh;
+			target = DF1043773BCDA1ADFCD6F61A2E539F50 /* SwiftUIRefresh */;
+			targetProxy = 5001921EB25AE1BAB7A4A4EA0FA393B8 /* PBXContainerItemProxy */;
+		};
+		CDAB7FF1690C96CAADE0563F4E99C6F7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Introspect;
+			target = 97E3685499568DCCBA6C15905F707BDC /* Introspect */;
+			targetProxy = CD058FE7DDF0774929E1ED9C464EE0F5 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		1422B121EAEAEA11307496903FA623C6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		1766D9E20EF644BD2F5AF6902214C3DA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9628888470322A9D08F648C42288005F /* Pods-P&G_Code_ChallengeTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-P&G_Code_ChallengeTests/Pods-P&G_Code_ChallengeTests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-P&G_Code_ChallengeTests/Pods-P&G_Code_ChallengeTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		3EB061B988F8ECA0EDB1A42857A66AFE /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C6AE50A38087C8F6C8B8D7BB70CFCE0A /* Pods-P&G_Code_Challenge-P&G_Code_ChallengeUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-P&G_Code_Challenge-P&G_Code_ChallengeUITests/Pods-P&G_Code_Challenge-P&G_Code_ChallengeUITests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-P&G_Code_Challenge-P&G_Code_ChallengeUITests/Pods-P&G_Code_Challenge-P&G_Code_ChallengeUITests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		549FF56A7E3A867925F148EAF2FFBF12 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 35CEED67FE0DF21E5C18AD951F67CF82 /* SwiftUIRefresh.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/SwiftUIRefresh/SwiftUIRefresh-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SwiftUIRefresh/SwiftUIRefresh-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/SwiftUIRefresh/SwiftUIRefresh.modulemap";
+				PRODUCT_MODULE_NAME = SwiftUIRefresh;
+				PRODUCT_NAME = SwiftUIRefresh;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.1;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		5B41C89F707FC618DEA28DC0CE83DA5A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 86663E28F6A8A37CE7937462066AA7EA /* Pods-P&G_Code_Challenge-P&G_Code_ChallengeUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-P&G_Code_Challenge-P&G_Code_ChallengeUITests/Pods-P&G_Code_Challenge-P&G_Code_ChallengeUITests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-P&G_Code_Challenge-P&G_Code_ChallengeUITests/Pods-P&G_Code_Challenge-P&G_Code_ChallengeUITests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		95FC1123250AE77E404DD57C3E1F5300 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 027FF84C9169965E3FBE80C35ED7C6B2 /* Introspect.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/Introspect/Introspect-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Introspect/Introspect-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/Introspect/Introspect.modulemap";
+				PRODUCT_MODULE_NAME = Introspect;
+				PRODUCT_NAME = Introspect;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.1;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		9F1CEB789C4DA89392A2041E6D30CA68 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F0A4AA697718A9D5135FFD6E52346380 /* Introspect.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/Introspect/Introspect-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Introspect/Introspect-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/Introspect/Introspect.modulemap";
+				PRODUCT_MODULE_NAME = Introspect;
+				PRODUCT_NAME = Introspect;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.1;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		CD8E3E0F0CCB862F97BCCF02998C46DF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BCAEC394B066546231643860F1B4B1FF /* Pods-P&G_Code_Challenge.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-P&G_Code_Challenge/Pods-P&G_Code_Challenge-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-P&G_Code_Challenge/Pods-P&G_Code_Challenge.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		E34642BCA3589F6D95C6499A386E801D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 09BABBB9FB038228DB4181E9AD510DB2 /* SwiftUIRefresh.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/SwiftUIRefresh/SwiftUIRefresh-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SwiftUIRefresh/SwiftUIRefresh-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/SwiftUIRefresh/SwiftUIRefresh.modulemap";
+				PRODUCT_MODULE_NAME = SwiftUIRefresh;
+				PRODUCT_NAME = SwiftUIRefresh;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.1;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		E5AA2E99BB5DA9F4BF08A519634448DA /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7EA8BF7E66C6AB45EFF6850518486BCD /* Pods-P&G_Code_Challenge.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-P&G_Code_Challenge/Pods-P&G_Code_Challenge-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-P&G_Code_Challenge/Pods-P&G_Code_Challenge.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		ED7888FA6713EABBF66D26A8003AD1CA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		F85CF84EDDB09D2B16FBB3C109029FFE /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E9D8F63EAD66BF495E42DBC1507564CF /* Pods-P&G_Code_ChallengeTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-P&G_Code_ChallengeTests/Pods-P&G_Code_ChallengeTests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-P&G_Code_ChallengeTests/Pods-P&G_Code_ChallengeTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0E5616A2A7E1DE330106AE7B6DAFD9D9 /* Build configuration list for PBXNativeTarget "Pods-P&G_Code_Challenge" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CD8E3E0F0CCB862F97BCCF02998C46DF /* Debug */,
+				E5AA2E99BB5DA9F4BF08A519634448DA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		16B9305882DF4E5359A9C88CFB34D3D7 /* Build configuration list for PBXNativeTarget "Introspect" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9F1CEB789C4DA89392A2041E6D30CA68 /* Debug */,
+				95FC1123250AE77E404DD57C3E1F5300 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ED7888FA6713EABBF66D26A8003AD1CA /* Debug */,
+				1422B121EAEAEA11307496903FA623C6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6CA6FB0ED8546FA1FF164660523A04AE /* Build configuration list for PBXNativeTarget "SwiftUIRefresh" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E34642BCA3589F6D95C6499A386E801D /* Debug */,
+				549FF56A7E3A867925F148EAF2FFBF12 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CFA7C35D72D14D307D26622F832B39A7 /* Build configuration list for PBXNativeTarget "Pods-P&G_Code_ChallengeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1766D9E20EF644BD2F5AF6902214C3DA /* Debug */,
+				F85CF84EDDB09D2B16FBB3C109029FFE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FDA6FEEFB244714810F3539811C3AA18 /* Build configuration list for PBXNativeTarget "Pods-P&G_Code_Challenge-P&G_Code_ChallengeUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5B41C89F707FC618DEA28DC0CE83DA5A /* Debug */,
+				3EB061B988F8ECA0EDB1A42857A66AFE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+}

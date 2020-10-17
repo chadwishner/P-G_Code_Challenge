@@ -53,6 +53,7 @@ struct SearchBar: View {
 				}
 			
 		}
+		.background(Color.clear)
 	}
 }
 

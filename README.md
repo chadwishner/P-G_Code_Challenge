@@ -5,7 +5,7 @@
  - List of top 500 Hacker News stories in a scrollable view
  - Stories and comments display in order based on their parent's int array.
  - Tapping a story opens a view with more information on the story including comments
- - If the story has a link, a safari icon is shown that can be tapped to open a SafariWebView of the link. This works in both the TopStoriesContentView as well as the StoryView
+ - If the story has a link, a safari icon is shown that can be tapped to open a SafariWebView of the link. This works when you are in the StoryView, a limitation of needing to use 
  - Search bar for story titles
  - HTML markers have been removed from text for Stories and Comments are in plain HTML. Upon further inspection of comments, it may be a good idea to create a custom view that interprets the HTML in order to maintain HTML formatting.
  - Necessary text changes color dynamically based on system color (light:dark)

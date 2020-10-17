@@ -6,6 +6,7 @@
 //TODO FIX ANIMATION
 
 import SwiftUI
+import SwiftUIRefresh
 
 /** Main view struct to handle home page to show card list of articles
 */
@@ -21,6 +22,8 @@ struct TopStoriesContentView: View {
 	@State var leftOffset: CGFloat = -100
 	@State var rightOffset: CGFloat = 100
 	
+	// States for refresh and search
+	@State private var isShowing = false
 	@State private var searchText : String = ""
 	
 	var body: some View {
@@ -54,11 +57,14 @@ struct TopStoriesContentView: View {
 					}
 				} else {
 					// ScrollView and LazyVStack used in order to avoid visual attributes of a List
-					ScrollView{
+					//ScrollView{
 						// SearchBar for searching titles
-						SearchBar(text: $searchText)
+						//SearchBar(text: $searchText)
 						
-						LazyVStack{
+						List{
+							// SearchBar for searching titles
+							SearchBar(text: $searchText)
+							
 							ForEach(getData.items.filter{
 								// Filter checks if items are not comments
 								if($0.type != "comment"){
@@ -81,18 +87,30 @@ struct TopStoriesContentView: View {
 										}//.matchedGeometryEffect(id: "storyOpen", in: matchedGeo)
 								}
 							}
+							//.fixedSize()
+							//.frame(width: 200, height: 200)
+							//.frame(maxWidth: .infinity)
+							//.listRowBackground(colorScheme != .dark ? Color.black : Color.white)
+							.listRowBackground(Color.clear)
 							
 							Text(self.getData.items.count == 500 ? "That's all 500 HN stories!" : (self.searchText.isEmpty) ? "Loading ... " : "")
 								.padding(.bottom, 10)
+								.frame(maxWidth: .infinity, alignment: .center)
 							
-							// Load the next stories in topStories when we reach end of list
-							.onAppear {
-								if (self.getData.items.last != nil){
-									getData.getNextStories(int: 10)
+								// Load the next stories in topStories when we reach end of list
+								.onAppear {
+									if (self.getData.items.last != nil){
+										getData.getNextStories(int: 10)
+									}
 								}
+						}
+						.pullToRefresh(isShowing: $isShowing) {
+							getData.refresh()
+							DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+								self.isShowing = false
 							}
 						}
-					}
+					//}
 				}
 			}
 			.navigationBarTitle(Text("Hacker News"))

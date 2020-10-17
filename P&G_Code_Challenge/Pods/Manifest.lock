@@ -1,0 +1,20 @@
+PODS:
+  - Introspect (0.1.0)
+  - SwiftUIRefresh (0.0.3):
+    - Introspect (~> 0.1.0)
+
+DEPENDENCIES:
+  - SwiftUIRefresh
+
+SPEC REPOS:
+  trunk:
+    - Introspect
+    - SwiftUIRefresh
+
+SPEC CHECKSUMS:
+  Introspect: ad32f2b7b9e7ac2c008b9dfec3d5325fbd3660fa
+  SwiftUIRefresh: ca6ae2718d25aad5dd68bbf5d2ae36ef6ade98bf
+
+PODFILE CHECKSUM: 5bc079edbdd146e6bcf008e64b5b488d88b2305c
+
+COCOAPODS: 1.9.3

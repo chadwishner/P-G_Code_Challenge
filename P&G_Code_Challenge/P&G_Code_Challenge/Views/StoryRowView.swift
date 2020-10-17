@@ -11,31 +11,24 @@ struct StoryRowView: View {
 	// Param to format a Story
 	var story : Item
 
+	// This is to switch text color based on system color (light:dark)
+	@Environment(\.colorScheme) var colorScheme
+	
 	// Card format
 	var body: some View {
 		HStack(alignment: .center) {
-			// If a url exists allow users to click on image to open webView when available
-			if (story.url != nil){
-				NavigationLink(destination: WebView(url: story.url!)){
-					Image("link")
-						.resizable()
-						.aspectRatio(contentMode: .fit)
-						.frame(width: 50, height: 50)
-						.padding(.all, 20)
-				}
-			} else {
-				// Dynamic Image to display based on type. If there is a url, then a safari icon is displayed
-				Image(story.type)
-					.resizable()
-					.aspectRatio(contentMode: .fit)
-					.frame(width: 50, height: 50)
-					.padding(.all, 20)
-			}
+
+			// Dynamic Image to display based on type. If there is a url, then a safari icon is displayed
+			Image((story.url != nil) ? "link" : story.type)
+				.resizable()
+				.aspectRatio(contentMode: .fit)
+				.frame(width: 50, height: 50)
+				.padding(.all, 20)
 					
 			VStack(alignment: .leading) {
 				Text(story.title!)
 					.font(.system(size: 15, weight: .bold, design: .default))
-					.foregroundColor(.white)
+					.foregroundColor(colorScheme != .dark ? Color.black : Color.white)
 					.padding(.top, 10)
 					.padding(.bottom, 0.5)
 				
@@ -46,18 +39,18 @@ struct StoryRowView: View {
 				HStack {
 					Text(String(story.score!) + " points by " + story.by)
 						.font(.system(size: 10, weight: .bold, design: .default))
-						.foregroundColor(.white)
+						.foregroundColor(colorScheme != .dark ? Color.black : Color.white)
 						.padding(.top, 2)
 						.padding(.bottom, 10)
 				}
 			}.padding(.trailing, 20)
-			Spacer()
+			//Spacer()
 		}
-		.frame(maxWidth: .infinity, alignment: .center)
-		.background(Color(red: 32/255, green: 36/255, blue: 38/255))
-		.cornerRadius(20)
-		.shadow(color: Color.black.opacity(0.2), radius: 20, x: 0, y: 0)
-		.padding(.all, 10)
+		//.frame(maxWidth: .infinity, alignment: .center)
+		//.background(Color(red: 32/255, green: 36/255, blue: 38/255))
+		//.cornerRadius(20)
+		//.shadow(color: Color.black.opacity(0.2), radius: 20, x: 0, y: 0)
+		//.padding(.all, 10)
 	}
 }
 
