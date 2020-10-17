@@ -2,7 +2,6 @@
 //  P&G_Code_Challenge
 //
 //  Created by Chad Wishner on 10/12/20.
-
 import SwiftUI
 
 /** Story view struct to handle detailed story information including:
@@ -51,8 +50,14 @@ struct StoryView: View {
 						.foregroundColor(.white)
 						.padding([.top, .trailing], 10)
 						.fixedSize(horizontal: false, vertical: true)
+					
+					// Show details about story including how long ago it was posted
 					HStack {
-						Text(String(story.score!) + " points by " + story.by)
+						Text(String(story.score!) + " points by " + story.by!)
+							.font(.system(size: 10, weight: .bold, design: .default))
+							.foregroundColor(.white)
+							.padding(.top, 0.5)
+						Text("- " + story.date.dateAsString())
 							.font(.system(size: 10, weight: .bold, design: .default))
 							.foregroundColor(.white)
 							.padding(.top, 0.5)
@@ -89,21 +94,24 @@ struct StoryView: View {
 		.cornerRadius(20)
 		.shadow(color: Color.black.opacity(0.2), radius: 20, x: 0, y: 0)
 		.padding([.horizontal, .bottom], 10)
-		.padding(.top, -38)
+		.padding(.top, -50)
 //		.matchedGeometryEffect(id: "storyOpen", in: matchedGeo)
 		
 		// Load comment data when the view appears
 		.onAppear{
-			getData.getAllComments(item: self.story)
+			// Check to see if we have already done the loading (although this doesn't seem to be working as intended)
+			if(!getData.hasLoaded && !getData.loading) {
+				getData.getAllComments(item: self.story)
+			}
 		}
-    }
+	}
 }
 
 
 /** Used for testing view in preview
 */
 struct HackerStory_Previews: PreviewProvider {
-    static var previews: some View {
+	static var previews: some View {
 		StoryView(story: Item(id: 1, type: "story", by: "Chad", time: 1175714200, text: "Test text afdbwerfjberigerkjghnerighnerkjghergheroigheriogergiohoerihgeriohgerg", url: "www.apple.com", score: 1, title: "P&G iOS Test awdadaddad", descendants: 2))
-    }
+	}
 }

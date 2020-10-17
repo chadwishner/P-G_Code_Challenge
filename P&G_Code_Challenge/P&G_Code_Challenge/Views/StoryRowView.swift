@@ -44,9 +44,15 @@ struct StoryRowView: View {
 					.font(.system(size: 8, weight: .bold, design: .default))
 					.foregroundColor(.gray)
 				HStack {
-					Text(String(story.score!) + " points by " + story.by)
+					Text(String(story.score!) + " points by " + story.by!)
 						.font(.system(size: 10, weight: .bold, design: .default))
 						.foregroundColor(.white)
+						.padding(.top, 2)
+						.padding(.bottom, 10)
+					Text("- " + story.date.timeAgoDisplay())
+						.font(.system(size: 10, weight: .bold, design: .default))
+						.foregroundColor(.white)
+						.padding(.leading, -3)
 						.padding(.top, 2)
 						.padding(.bottom, 10)
 				}

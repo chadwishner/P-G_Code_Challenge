@@ -65,13 +65,10 @@ This function is designed to load a specific number of stories into the **Story*
 **getAllComments(item: Item)**
 This function loops through all children in the kids array and calls **getItemDetails()** it then appends the returning **Item** to  an array. This function also double checks that we do not add duplicate comments, an issue that could occur if a user leaves a **StoryView** and returns.
 
-**sortItemArray(parentArray: [int])**
-This function creates a published **Item** array that is sorted based on the incoming parent array. The parent array is any array that has the ordered list of IDs that correspond to the **Items** in the unorderd dictionary. For example: the parent array for a dictionary containing stories is the topStories array (500 top Hacker News Stories), the parent array for a dictionary of comments is the parent's Story.kids array.
+### Network/Extensions.swift
 
-### Models/Story.swift
+This is just an extension file in order to format dates.
 
-This is the struct used to model a story. Booleans are commented out as in the current implementation only existing and alive stories are requested through the API.
+### Models/Item.swift
 
-### Models/Comment.swift
-
-This is the struct used to model a comment. Booleans are commented out as in the current implementation only existing and alive comments are requested through the API. The API documentation suggests that these are the only properties that a comment will have.
+This is the struct used to model any item. Dead is  commented out as in the current implementation only alive items need to be processed

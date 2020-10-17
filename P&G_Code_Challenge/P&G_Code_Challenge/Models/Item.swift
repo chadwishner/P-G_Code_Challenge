@@ -8,11 +8,11 @@ import Foundation
 /** Struct to format a story as recieved by HackerNews API
 */
 struct Item: Decodable, Identifiable, Hashable {
-	// Commented out bools as they are not allowed to be optional, and unnessary when app only displays top 500 active stories
+	// Commented out dead as they are not allowed to be optional, and unnessary when app only displays top 500 active stories
 	var id: Int
-	//var deleted: Bool?
+	var deleted: Bool? = false
 	var type: String
-	var by: String
+	var by: String?
 	var time: Int
 	var text: String?
 	//var dead: Bool?
@@ -24,5 +24,5 @@ struct Item: Decodable, Identifiable, Hashable {
 	var title: String?
 	var parts: [Int]?
 	var descendants: Int?
-	
+	var date: Date!
 }
